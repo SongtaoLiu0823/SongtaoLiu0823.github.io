@@ -8,9 +8,7 @@
 Email: stliu15@fudan.edu.cn  
 [[Google Scholar]](https://scholar.google.com/citations?hl=zh-CN&user=OPZ_9L4AAAAJ) [[Github]](https://github.com/SongtaoLiu0823)
 
-Hi, this is Songtao. I obtained my B.S. from School of Data Science at Fudan University.
-
-My research topics include 1) Pre-training and improving robustness for graph neural networks; 2) Retrosynthetic planning.
+Hi, this is Songtao. My research topics include 1) Pre-training and improving robustness for graph neural networks; 2) Retrosynthetic planning.
 
 
 
