@@ -30,7 +30,7 @@ Hi, this is Songtao. I'm currently a third-year Ph.D. student advised by [Peng L
 
 Conference/Journal/Workshop Reviewer: AAAI 2023, KDD 2023, ICML 2022, 2024, NeurIPS 2022, 2023, ICLR 2024, AISTATS 2024, GLFrontiers@NeurIPS 2023, TMLR  
 
-Conference/Journal/Workshop Area Chair: AI for Science@NeurIPS 2023  
+Conference/Workshop Area Chair: AI for Science@NeurIPS 2023  
 
 
 
