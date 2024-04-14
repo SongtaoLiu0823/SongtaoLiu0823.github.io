@@ -10,8 +10,9 @@
 Email: skl5761@psu.edu
 
 
-Hi, this is Songtao. I'm currently a third-year Ph.D. student advised by [Peng Liu](https://s2.ist.psu.edu/pliu/) at Penn State. I obtained my B.S. from School of Data Science at Fudan University. I am interested in machine learning and generative AI.
+Hi, this is Songtao. I'm currently a third-year Ph.D. student advised by [Prof. Peng Liu](https://s2.ist.psu.edu/pliu/) at Penn State. I obtained my B.S. from School of Data Science at Fudan University. I am interested in machine learning and generative AI.
 
+**I'm looking for an internship or visiting position this fall that would allow me to use my CPT.**
 
 ## Publications    
   
