@@ -25,7 +25,7 @@ Hi, this is Songtao. I'm currently a third-year Ph.D. student advised by [Prof. 
 * [Local Augmentation for Graph Neural Networks](https://arxiv.org/abs/2109.03856)  
   **Songtao Liu**, Rex Ying, Hanze Dong, Lanqing Li, Tingyang Xu, Yu Rong, Peilin Zhao, Junzhou Huang, Dinghao Wu  
   *International Conference on Machine Learning* **(ICML)**, 2022  
-  [[OpenReview]](https://openreview.net/pdf?id=HOlhtomacz) [[arXiv]](https://arxiv.org/pdf/2109.03856.pdf) [[Code]](https://github.com/SongtaoLiu0823/LAGNN)  
+  [[arXiv]](https://arxiv.org/pdf/2109.03856.pdf) [[Code]](https://github.com/SongtaoLiu0823/LAGNN)  
 
 ## Professional Services
 
