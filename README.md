@@ -12,7 +12,7 @@ Email: skl5761@psu.edu
 
 Hi, this is Songtao. I'm currently a third-year Ph.D. student advised by [Prof. Peng Liu](https://s2.ist.psu.edu/pliu/) at Penn State. I obtained my B.S. from School of Data Science at Fudan University. I am interested in machine learning and generative AI.
 
-**I'm looking for an internship or visiting position this fall that would allow me to use my CPT.**
+**I'm looking for an internship or visiting position this fall, please contact me if you are interested in my research.**
 
 ## Publications    
   
@@ -20,7 +20,7 @@ Hi, this is Songtao. I'm currently a third-year Ph.D. student advised by [Prof. 
 * [FusionRetro: Molecule Representation Fusion via In-Context Learning for Retrosynthetic Planning](https://arxiv.org/abs/2209.15315)  
   **Songtao Liu**, Zhengkai Tu, Minkai Xu, Zuobai Zhang, Lu Lin, Rex Ying, Jian Tang, Peilin Zhao, Dinghao Wu  
   *International Conference on Machine Learning* **(ICML)**, 2023  
-  [[OpenReview]](https://openreview.net/pdf?id=cnILy0dQUr) [[arXiv]](https://arxiv.org/pdf/2209.15315.pdf) [[Code]](https://github.com/SongtaoLiu0823/FusionRetro) 
+  [[arXiv]](https://arxiv.org/pdf/2209.15315.pdf) [[Code]](https://github.com/SongtaoLiu0823/FusionRetro) 
 
 * [Local Augmentation for Graph Neural Networks](https://arxiv.org/abs/2109.03856)  
   **Songtao Liu**, Rex Ying, Hanze Dong, Lanqing Li, Tingyang Xu, Yu Rong, Peilin Zhao, Junzhou Huang, Dinghao Wu  
@@ -29,7 +29,7 @@ Hi, this is Songtao. I'm currently a third-year Ph.D. student advised by [Prof. 
 
 ## Professional Services
 
-Conference/Journal/Workshop Reviewer: AAAI 2023, KDD 2023, ICML 2022, 2024, NeurIPS 2022, 2023, ICLR 2024, AISTATS 2024, GLFrontiers@NeurIPS 2023, TMLR  
+Conference/Journal/Workshop Reviewer: AAAI 2023, KDD 2023, ICML 2022/2024, NeurIPS 2022/2023, ICLR 2024, AISTATS 2024, GLFrontiers@NeurIPS 2023, TMLR  
 
 
 
