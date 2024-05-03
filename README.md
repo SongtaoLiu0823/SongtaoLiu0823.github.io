@@ -14,7 +14,7 @@ Hi, this is Songtao. I'm currently a third-year Ph.D. student advised by [Prof. 
 
 **I'm looking for an internship this fall and full-time positions in the industry (or maybe academia), please contact me if you are interested in my research.**
 
-## Publications    
+## Publications & Preprints    
 
 * [Controllable Molecule Synthesis with Residual Energy-based Models]()  
   **Songtao Liu**, Hanjun Dai, Yue Zhao, Peng Liu  
@@ -33,7 +33,11 @@ Hi, this is Songtao. I'm currently a third-year Ph.D. student advised by [Prof. 
 * [Local Augmentation for Graph Neural Networks](https://arxiv.org/abs/2109.03856)  
   **Songtao Liu**, Rex Ying, Hanze Dong, Lanqing Li, Tingyang Xu, Yu Rong, Peilin Zhao, Junzhou Huang, Dinghao Wu  
   *International Conference on Machine Learning* **(ICML)**, 2022  
-  [[arXiv]](https://arxiv.org/pdf/2109.03856.pdf) [[Code]](https://github.com/SongtaoLiu0823/LAGNN)  
+  [[arXiv]](https://arxiv.org/pdf/2109.03856.pdf) [[Code]](https://github.com/SongtaoLiu0823/LAGNN)
+
+* [Enhancing Multi-hop Connectivity for Graph Convolutional Networks](https://openreview.net/attachment?id=b-fUjY16Y_&name=pdf)  
+  **Songtao Liu**, Shixiong Jing, Tong Zhao, Zengfeng Huang, Dinghao Wu  
+  ICML Pre-training Workshop, 2022  
 
 ## Professional Services
 
