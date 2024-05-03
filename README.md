@@ -10,13 +10,22 @@
 Email: skl5761@psu.edu
 
 
-Hi, this is Songtao. I'm currently a third-year Ph.D. student advised by [Prof. Peng Liu](https://s2.ist.psu.edu/pliu/) at Penn State. I obtained my B.S. from School of Data Science at Fudan University. I am interested in machine learning and generative AI.
+Hi, this is Songtao. I'm currently a third-year Ph.D. student advised by [Prof. Peng Liu](https://s2.ist.psu.edu/pliu/) at Penn State. I obtained my B.S. from School of Data Science at Fudan University. My research focuses on machine learning, generative AI, and Large Language Models.
 
-**I'm looking for an internship or visiting position this fall, please contact me if you are interested in my research.**
+**I'm looking for an internship this fall and full-time positions in the industry, please contact me if you are interested in my research.**
 
 ## Publications    
-  
 
+* [Controllable Molecule Synthesis with Residual Energy-based Models]()  
+  **Songtao Liu**, Hanjun Dai, Yue Zhao, Peng Liu  
+  *International Conference on Machine Learning* **(ICML)**, 2024  
+  [[arXiv]]() [[Code]]()
+  
+* [Graph Adversarial Diffusion Convolution]()  
+  **Songtao Liu**, Jinghui Chen, Tianfan Fu, Lu Lin, Marinka Zitnik, Dinghao Wu  
+  *International Conference on Machine Learning* **(ICML)**, 2024  
+  [[arXiv]]() [[Code]]()
+  
 * [FusionRetro: Molecule Representation Fusion via In-Context Learning for Retrosynthetic Planning](https://arxiv.org/abs/2209.15315)  
   **Songtao Liu**, Zhengkai Tu, Minkai Xu, Zuobai Zhang, Lu Lin, Rex Ying, Jian Tang, Peilin Zhao, Dinghao Wu  
   *International Conference on Machine Learning* **(ICML)**, 2023  
