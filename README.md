@@ -37,13 +37,9 @@ Hi, this is Songtao. I'm currently a third-year Ph.D. student advised by [Prof. 
   *International Conference on Machine Learning* **(ICML)**, 2022  
   [[arXiv]](https://arxiv.org/pdf/2109.03856.pdf) [[Code]](https://github.com/SongtaoLiu0823/LAGNN)
 
-* [Enhancing Multi-hop Connectivity for Graph Convolutional Networks](https://openreview.net/attachment?id=b-fUjY16Y_&name=pdf)  
-  **Songtao Liu**, Shixiong Jing, Tong Zhao, Zengfeng Huang, Dinghao Wu  
-  ICML Pre-training Workshop, 2022  
-
 ## Professional Services
 
-Conference/Journal/Workshop Reviewer: ICML 2022/2024, NeurIPS 2022/2023/2024, ICLR 2024, AISTATS 2024, TMLR  
+Conference/Journal Reviewer: ICML 2022/2024, NeurIPS 2022/2023/2024, ICLR 2024, AISTATS 2024, TMLR  
 
 
 
