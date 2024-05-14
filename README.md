@@ -12,8 +12,6 @@ Email: skl5761@psu.edu
 
 Hi, this is Songtao. I'm currently a third-year Ph.D. student advised by [Prof. Peng Liu](https://s2.ist.psu.edu/pliu/) at Penn State. I obtained my B.S. from School of Data Science at Fudan University. My research focuses on machine learning, generative AI, and large language models.
 
-**To prospective collaborators: If you want to work with me, please make solid contributions so that we can maintain a healthy and long-term collaboration relationship.**
-
 **I'm looking for an internship this fall and full-time positions in the industry (or maybe academia), please contact me if you are interested in my research.**
 
 ## Publications & Preprints    
