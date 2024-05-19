@@ -16,10 +16,10 @@ Hi, this is Songtao. I'm currently a third-year Ph.D. student advised by [Prof. 
 
 ## Publications & Preprints    
 
-* [Controllable Molecule Synthesis with Residual Energy-based Models]()  
+* [Controllable Molecule Synthesis with Residual Energy-based Models](https://github.com/SongtaoLiu0823/REBMRetro)  
   **Songtao Liu**, Hanjun Dai, Yue Zhao, Peng Liu  
   *International Conference on Machine Learning* **(ICML)**, 2024  
-  [[arXiv]]() [[Code]]()
+  [[Paper]](https://github.com/SongtaoLiu0823/REBMRetro/blob/main/REBMRetro_ICML_2024.pdf) [[Code]](https://github.com/SongtaoLiu0823/REBMRetro)
   
 * [Graph Adversarial Diffusion Convolution]()  
   **Songtao Liu**, Jinghui Chen, Tianfan Fu, Lu Lin, Marinka Zitnik, Dinghao Wu  
