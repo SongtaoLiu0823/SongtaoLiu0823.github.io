@@ -24,7 +24,8 @@ Hi, this is Songtao. I'm currently a third-year Ph.D. student advised by [Prof. 
 * [Graph Adversarial Diffusion Convolution]()  
   **Songtao Liu**, Jinghui Chen, Tianfan Fu, Lu Lin, Marinka Zitnik, Dinghao Wu  
   *International Conference on Machine Learning* **(ICML)**, 2024  
-  [[arXiv]]() [[Code]]()
+  [[Paper]](https://github.com/SongtaoLiu0823/GADC/blob/main/GADC_ICML_2024.pdf) [[Code]](https://github.com/SongtaoLiu0823/GADC/)
+  
 * [FusionRetro: Molecule Representation Fusion via In-Context Learning for Retrosynthetic Planning](https://arxiv.org/abs/2209.15315)  
   **Songtao Liu**, Zhengkai Tu, Minkai Xu, Zuobai Zhang, Lu Lin, Rex Ying, Jian Tang, Peilin Zhao, Dinghao Wu  
   *International Conference on Machine Learning* **(ICML)**, 2023  
