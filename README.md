@@ -16,7 +16,7 @@ Hi, this is Songtao. I'm currently a third-year Ph.D. student advised by [Prof. 
 
 ## Publications & Preprints    
 
-* [Controllable Molecule Synthesis with Residual Energy-based Models](https://github.com/SongtaoLiu0823/REBMRetro)  
+* [Preference Optimization with Conditional Residual Energy-based Models for Molecule Synthesis](https://github.com/SongtaoLiu0823/CREBMRetro)  
   **Songtao Liu**, Hanjun Dai, Yue Zhao, Peng Liu  
   *International Conference on Machine Learning* **(ICML)**, 2024  
   [[Paper]](https://github.com/SongtaoLiu0823/REBMRetro/blob/main/REBMRetro_ICML_2024.pdf) [[Code]](https://github.com/SongtaoLiu0823/REBMRetro)
