@@ -16,15 +16,15 @@ Hi, this is Songtao. I'm currently a third-year Ph.D. student advised by [Prof. 
 
 ## Publications & Preprints    
 
-* [Preference Optimization with Conditional Residual Energy-based Models for Molecule Synthesis](https://github.com/SongtaoLiu0823/CREBMRetro)  
+* [Preference Optimization for Molecule Synthesis with Conditional Residual Energy-based Models](https://arxiv.org/abs/2406.02066)  
   **Songtao Liu**, Hanjun Dai, Yue Zhao, Peng Liu  
-  *International Conference on Machine Learning* **(ICML)**, 2024  
-  [[Paper]](https://github.com/SongtaoLiu0823/REBMRetro/blob/main/REBMRetro_ICML_2024.pdf) [[Code]](https://github.com/SongtaoLiu0823/REBMRetro)
+  *International Conference on Machine Learning* **(ICML)**, 2024  **Oral**  
+  [[arXiv]](https://arxiv.org/pdf/2406.02066) [[Code]](https://github.com/SongtaoLiu0823/CREBM)
   
-* [Graph Adversarial Diffusion Convolution]()  
+* [Graph Adversarial Diffusion Convolution](https://arxiv.org/abs/2406.02059)  
   **Songtao Liu**, Jinghui Chen, Tianfan Fu, Lu Lin, Marinka Zitnik, Dinghao Wu  
   *International Conference on Machine Learning* **(ICML)**, 2024  
-  [[Paper]](https://github.com/SongtaoLiu0823/GADC/blob/main/GADC_ICML_2024.pdf) [[Code]](https://github.com/SongtaoLiu0823/GADC/)
+  [[arXiv]](https://arxiv.org/pdf/2406.02059) [[Code]](https://github.com/SongtaoLiu0823/GADC/)
   
 * [FusionRetro: Molecule Representation Fusion via In-Context Learning for Retrosynthetic Planning](https://arxiv.org/abs/2209.15315)  
   **Songtao Liu**, Zhengkai Tu, Minkai Xu, Zuobai Zhang, Lu Lin, Rex Ying, Jian Tang, Peilin Zhao, Dinghao Wu  
