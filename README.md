@@ -27,7 +27,7 @@ Hi, this is Songtao. I'm currently a third-year Ph.D. student advised by [Prof. 
   [[arXiv]](https://arxiv.org/pdf/2406.02059) [[Code]](https://github.com/SongtaoLiu0823/GADC/)
   
 * [FusionRetro: Molecule Representation Fusion via In-Context Learning for Retrosynthetic Planning](https://arxiv.org/abs/2209.15315)  
-  **Songtao Liu**, Zhengkai Tu, Minkai Xu, Zuobai Zhang, Lu Lin, Rex Ying, Jian Tang, Peilin Zhao, Dinghao Wu  
+  **Songtao Liu**, Zhengkai Tu*, Minkai Xu*, Zuobai Zhang*, Lu Lin, Rex Ying, Jian Tang, Peilin Zhao, Dinghao Wu  
   *International Conference on Machine Learning* **(ICML)**, 2023  
   [[arXiv]](https://arxiv.org/pdf/2209.15315.pdf) [[Code]](https://github.com/SongtaoLiu0823/FusionRetro) 
 
