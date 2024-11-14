@@ -14,6 +14,11 @@ Hi, this is Songtao. I'm currently a fourth-year Ph.D. candidate advised by [Pro
 
 ## Selected Publications and Preprints    
 
+* [SDDBench: A Benchmark for Synthesizable Drug Design](https://arxiv.org/abs/2411.08306)  
+  <b><u>Songtao Liu</u></b>, Zhengkai Tu, Hanjun Dai, Peng Liu  
+  <em>arXiv</em>, 2024    
+  [[arXiv]](https://arxiv.org/pdf/2411.08306) [[Code]](https://github.com/SongtaoLiu0823/SDDBench)
+  
 * [Preference Optimization for Molecule Synthesis with Conditional Residual Energy-based Models](https://arxiv.org/abs/2406.02066)  
   <b><u>Songtao Liu</u></b>, Hanjun Dai, Yue Zhao, Peng Liu  
   <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2024  
