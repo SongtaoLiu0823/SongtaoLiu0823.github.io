@@ -10,7 +10,9 @@
 Email: skl5761@psu.edu
 
 
-Hi, this is Songtao. I'm currently a fourth-year Ph.D. candidate advised by [Prof. Peng Liu](https://s2.ist.psu.edu/pliu/) at Penn State. I obtained my B.S. from Fudan University. My research focuses on machine learning, generative modeling, and large language models. I intern/interned at Tencent AI Lab and Amazon.
+Hi, this is Songtao. I'm currently a fourth-year Ph.D. candidate advised by [Prof. Peng Liu](https://s2.ist.psu.edu/pliu/) at Penn State. I obtained my B.S. from Fudan University. I have interned at Tencent AI Lab and Amazon.
+
+My research focuses on efficient machine learning and generative modeling, with an emphasis on developing algorithms that reduce training/inference costs and solve diverse problems across domains such as language and science.
 
 ## Selected Publications and Preprints    
 
