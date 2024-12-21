@@ -24,7 +24,7 @@ My research focuses on efficient machine learning and generative modeling, with 
 * [Preference Optimization for Molecule Synthesis with Conditional Residual Energy-based Models](https://arxiv.org/abs/2406.02066)  
   <b><u>Songtao Liu</u></b>, Hanjun Dai, Yue Zhao, Peng Liu  
   <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2024  
-  <em><strong style="color: red;">Oral Presentation [144/9473]</strong></em>    
+  <em><strong style="color: red;">Oral Presentation</strong></em>    
   [[arXiv]](https://arxiv.org/pdf/2406.02066) [[Code]](https://github.com/SongtaoLiu0823/CREBM) 
   
  * [Graph Adversarial Diffusion Convolution](https://arxiv.org/abs/2406.02059)  
@@ -44,7 +44,7 @@ My research focuses on efficient machine learning and generative modeling, with 
 
 ## Professional Services
 
-Conference/Journal Reviewer: ICML 2022/2024, NeurIPS 2022/2023/2024, ICLR 2024/2025, AISTATS 2024, TMLR  
+Conference/Journal Reviewer: ICML 2022/2024/2025, NeurIPS 2022/2023/2024, ICLR 2024/2025, AISTATS 2024, TMLR  
 
 
 
