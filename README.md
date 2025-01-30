@@ -10,7 +10,7 @@
 Email: skl5761@psu.edu
 
 
-Hi, this is Songtao. I'm currently a fourth-year Ph.D. candidate advised by [Prof. Peng Liu](https://s2.ist.psu.edu/pliu/) at Penn State. I received my B.S. in Data Science from Fudan University, after two years in Computer Science.
+Hi, this is Songtao. I'm currently a fourth-year Ph.D. candidate advised by [Prof. Peng Liu](https://s2.ist.psu.edu/pliu/) at Penn State. I received my B.S. in Computer Science and Data Science from Fudan University.
 
 My research focuses on efficient machine learning and generative modeling, with an emphasis on developing algorithms that reduce inference cost and solve diverse problems across domains such as language and science.
 
