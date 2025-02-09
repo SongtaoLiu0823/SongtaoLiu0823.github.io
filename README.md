@@ -17,20 +17,7 @@ My research focuses on efficient machine learning and generative modeling, with 
 **I am on the industry job market for 2025-2026!**
 
 
-## Selected Publications and Preprints    
-
-* Large Language Models Outperform Vision Language Models in Multimodal Reward Modeling  
-  <b><u>Songtao Liu</u></b>, et al.  
-  Work was done during my internship  
-  <em>Preprint</em>
-  
-* Pruning Aggregation Parameters for Large Language Models  
-  <b><u>Songtao Liu</u></b>, et al.   
-  <em>Preprint</em>
-  
-* Evaluating Molecule Synthesizability via Retrosynthetic Planning and Reaction Prediction  
-  <b><u>Songtao Liu</u></b>, et al.   
-  <em>Preprint</em>    
+## Selected Publications and Preprints     
   
 * [Preference Optimization for Molecule Synthesis with Conditional Residual Energy-based Models](https://arxiv.org/abs/2406.02066)  
   <b><u>Songtao Liu</u></b>, Hanjun Dai, Yue Zhao, Peng Liu  
