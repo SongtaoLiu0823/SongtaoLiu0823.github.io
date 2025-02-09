@@ -21,6 +21,7 @@ My research focuses on efficient machine learning and generative modeling, with 
 
 * Large Language Models Outperform Vision Language Models in Multimodal Reward Modeling  
   <b><u>Songtao Liu</u></b>, et al.  
+  Work was done during my internship  
   <em>Preprint</em>
   
 * Pruning Aggregation Parameters for Large Language Models  
