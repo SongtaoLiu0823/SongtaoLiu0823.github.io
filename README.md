@@ -10,16 +10,26 @@
 Email: skl5761@psu.edu
 
 
-Hi, this is Songtao. I'm currently a fourth-year Ph.D. candidate advised by [Prof. Peng Liu](https://s2.ist.psu.edu/pliu/) at Penn State. I received my B.S. in Computer Science and Data Science from Fudan University.
+Hi, this is Songtao. I'm currently a Ph.D. candidate advised by [Prof. Peng Liu](https://s2.ist.psu.edu/pliu/) at Penn State. I received my B.S. in Computer Science and Data Science from Fudan University.
 
 My research focuses on efficient machine learning and generative modeling, with an emphasis on developing algorithms that reduce inference cost and solve diverse problems across domains such as language and science.
 
+**I am on the industry job market for 2025-2026!**
+
+
 ## Selected Publications and Preprints    
 
-* [SDDBench: A Benchmark for Synthesizable Drug Design](https://arxiv.org/abs/2411.08306)  
-  <b><u>Songtao Liu</u></b>, Zhengkai Tu, Hanjun Dai, Peng Liu  
-  <em>arXiv</em>, 2024    
-  [[arXiv]](https://arxiv.org/pdf/2411.08306) [[Code]](https://github.com/SongtaoLiu0823/SDDBench)
+* Large Language Models Outperform Vision Language Models in Multimodal Reward Modeling  
+  <b><u>Songtao Liu</u></b>, et al.  
+  <em>Preprint</em>
+  
+* Pruning Aggregation Parameters for Large Language Models  
+  <b><u>Songtao Liu</u></b>, et al.   
+  <em>Preprint</em>
+  
+* Evaluating Molecule Synthesizability via Retrosynthetic Planning and Reaction Prediction  
+  <b><u>Songtao Liu</u></b>, et al.   
+  <em>Preprint</em>    
   
 * [Preference Optimization for Molecule Synthesis with Conditional Residual Energy-based Models](https://arxiv.org/abs/2406.02066)  
   <b><u>Songtao Liu</u></b>, Hanjun Dai, Yue Zhao, Peng Liu  
@@ -46,7 +56,11 @@ My research focuses on efficient machine learning and generative modeling, with 
 
 Conference/Journal Reviewer: ICML 2022/2024/2025, NeurIPS 2022/2023/2024, ICLR 2024/2025, AISTATS 2024, TMLR  
 
-
+## Teaching
+DS 330: Visual Analytics, Penn State, Spring 2025  
+DS 320: Data Integration and Fusion, Penn State, Spring 2024  
+DS/CMPSC 410: Programming Models for Big Data, Penn State, Fall 2023  
+IST 815: Foundations of Information Security and Assurance, Penn State, Fall 2023  
 
 <body>
 
