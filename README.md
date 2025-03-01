@@ -26,7 +26,7 @@ My research focuses on efficient machine learning and generative modeling, with 
   [[arXiv]](https://arxiv.org/pdf/2406.02066) [[Code]](https://github.com/SongtaoLiu0823/CREBM) 
   
  * [Graph Adversarial Diffusion Convolution](https://arxiv.org/abs/2406.02059)  
-  <b><u>Songtao Liu</u></b>, Jinghui Chen, Tianfan Fu, Marinka Zitnik, Dinghao Wu  
+  <b><u>Songtao Liu</u></b>, Jinghui Chen, Marinka Zitnik, Dinghao Wu  
   <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2024  
   [[arXiv]](https://arxiv.org/pdf/2406.02059) [[Code]](https://github.com/SongtaoLiu0823/GADC)
 
