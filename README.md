@@ -12,7 +12,7 @@ Email: skl5761@psu.edu
 
 Hi, this is Songtao. I'm currently a Ph.D. candidate at Penn State. I received my B.S. in Computer Science and Data Science from Fudan University.
 
-My research focuses on scalable and efficient discrete generative modeling, with an emphasis on developing algorithms that reduce inference cost and solve diverse problems across domains such as language and science.
+My research focuses on scalable and efficient discrete generative modeling, with an emphasis on developing algorithms that reduce inference cost and solve diverse problems across domains such as language.
 
 **I am on the job market for 2025-2026!**
 
