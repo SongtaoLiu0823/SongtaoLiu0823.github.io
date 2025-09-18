@@ -17,18 +17,8 @@ My research focuses on scalable and efficient discrete generative modeling, with
 **I am on the job market for 2025-2026!**
 
 
-## Selected Publications and Preprints     
+## Publications     
 **\* denotes equal contribution (first, second, or senior)**
-
-* [High-Layer Attention Pruning with Rescaling](https://arxiv.org/abs/2507.01900)  
-  <b><u>Songtao Liu</u></b>, Peng Liu  
-  <em>arXiv</em>, 2025    
-  [[arXiv]](https://arxiv.org/pdf/2507.01900)
-  
-* [Evaluating Molecule Synthesizability via Retrosynthetic Planning and Reaction Prediction](https://arxiv.org/abs/2411.08306)  
-  <b><u>Songtao Liu</u></b>, Dandan Zhang, Zhengkai Tu, Hanjun Dai\*, Peng Liu\*  
-  <em>arXiv</em>, 2024    
-  [[arXiv]](https://arxiv.org/pdf/2411.08306)  
   
 * [Preference Optimization for Molecule Synthesis with Conditional Residual Energy-based Models](https://arxiv.org/abs/2406.02066)  
   <b><u>Songtao Liu</u></b>, Hanjun Dai, Yue Zhao, Peng Liu  
