@@ -7,7 +7,7 @@
 
 
 [[Google Scholar]](https://scholar.google.com/citations?user=OPZ_9L4AAAAJ&hl=en) [[Github]](https://github.com/SongtaoLiu0823)  
-Email: skl5671@psu.edu
+Email: skl5761@psu.edu
 
 
 Hi, this is Songtao. I'm currently a CS Ph.D. candidate at Penn State. I received my B.S. in Computer Science and Data Science from Fudan University.
