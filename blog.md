@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -29,8 +28,8 @@
         
         /* 左侧目录栏 */
         .sidebar-left {
-            width: 250px;
-            padding: 30px 20px;
+            width: 200px;
+            padding: 30px 15px;
             background: #fafafa;
             border-right: 1px solid #e0e0e0;
             position: sticky;
@@ -85,8 +84,8 @@
         /* 中间内容区 */
         .content {
             flex: 1;
-            padding: 40px 50px;
-            max-width: 800px;
+            padding: 40px 60px;
+            max-width: 900px;
         }
         
         .content h1 {
@@ -157,8 +156,8 @@
         
         /* 右侧批注栏 */
         .sidebar-right {
-            width: 300px;
-            padding: 30px 20px;
+            width: 200px;
+            padding: 30px 15px;
             background: #fffef5;
             border-left: 1px solid #e0e0e0;
         }
