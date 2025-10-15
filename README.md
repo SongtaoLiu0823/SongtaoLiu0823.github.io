@@ -17,7 +17,7 @@ My research focuses on scalable and efficient discrete generative modeling, with
 **I am on the job market for 2025-2026!**
 
 
-## Publications     
+## Selected Publications and Preprints    
 **\* denotes equal contribution (first, second, or senior)**
 
 * [Multi-Head Low-Rank Attention](https://drive.google.com/file/d/1W6Vm-urga96Hl4R17qq9A0f3mOQ5m5Fz/view?usp=share_link)  
@@ -44,6 +44,18 @@ My research focuses on scalable and efficient discrete generative modeling, with
   <b><u>Songtao Liu</u></b>, Rex Ying, Hanze Dong, Lanqing Li, Tingyang Xu, Yu Rong, Peilin Zhao, Junzhou Huang, Dinghao Wu  
   <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2022  
   [[arXiv]](https://arxiv.org/pdf/2109.03856) [[Code]](https://github.com/SongtaoLiu0823/LAGNN) 
+
+## Other Publications and Preprints 
+* [High-Layer Attention Pruning with Rescaling](https://arxiv.org/abs/2507.01900)  
+  <b><u>Songtao Liu</u></b>, Peng Liu  
+  <em>arXiv</em>, 2025  
+  [[arXiv]](https://arxiv.org/pdf/2507.01900)
+
+* [Evaluating Molecule Synthesizability via Retrosynthetic Planning and Reaction Prediction](https://arxiv.org/abs/2411.08306)  
+  <b><u>Songtao Liu</u></b>, Dandan Zhang, Zhengkai Tu, Hanjun Dai, Peng Liu  
+  <em>arXiv</em>, 2024  
+  [[arXiv]](https://arxiv.org/pdf/2411.08306) 
+
 
 ## Professional Services
 
