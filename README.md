@@ -56,7 +56,12 @@ My research focuses on scalable and efficient discrete generative modeling, with
   <em>arXiv</em>, 2024  
   [[arXiv]](https://arxiv.org/pdf/2411.08306) 
 
+* [Higher-order Weighted Graph Convolutional Networks](https://arxiv.org/abs/1911.04129)  
+  <b><u>Songtao Liu</u></b>, Lingwei Chen, Hanze Dong, Zihao Wang, Dinghao Wu, Zengfeng Huang  
+  <em>arXiv</em>, 2019  
+  [[arXiv]](https://arxiv.org/pdf/1911.04129)
 
+  
 ## Professional Services
 
 Conference/Journal Reviewer: ICML 2022/2024/2025, NeurIPS 2022/2023/2024/2025, ICLR 2024/2025, AISTATS 2024, TMLR  
