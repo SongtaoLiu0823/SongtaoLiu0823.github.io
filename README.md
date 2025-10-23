@@ -23,27 +23,23 @@ My research focuses on scalable and efficient discrete generative modeling, with
 * [Multi-Head Low-Rank Attention](https://drive.google.com/file/d/1W6Vm-urga96Hl4R17qq9A0f3mOQ5m5Fz/view?usp=share_link)  
   <b><u>Songtao Liu</u></b>, Hongwu Peng, Zhiwei Zhang, Zhengyu Chen, Yue Guo  
   [[pdf]](https://drive.google.com/file/d/1W6Vm-urga96Hl4R17qq9A0f3mOQ5m5Fz/view?usp=share_link) 
-    
+
+* [Evaluating Molecule Synthesizability via Retrosynthetic Planning and Reaction Prediction](https://arxiv.org/abs/2411.08306)  
+  <b><u>Songtao Liu</u></b>, Dandan Zhang, Zhengkai Tu, Hanjun Dai, Peng Liu  
+  <em>arXiv</em>, 2024  
+  [[arXiv]](https://arxiv.org/pdf/2411.08306)
+  
 * [Preference Optimization for Molecule Synthesis with Conditional Residual Energy-based Models](https://arxiv.org/abs/2406.02066)  
   <b><u>Songtao Liu</u></b>, Hanjun Dai, Yue Zhao, Peng Liu  
   <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2024  
   <em><strong style="color: red;">Oral Presentation</strong></em>    
   [[arXiv]](https://arxiv.org/pdf/2406.02066) [[Code]](https://github.com/SongtaoLiu0823/CREBM) 
-  
- * [Graph Adversarial Diffusion Convolution](https://arxiv.org/abs/2406.02059)  
-  <b><u>Songtao Liu</u></b>, Jinghui Chen, Tianfan Fu, Lu Lin, Marinka Zitnik, Dinghao Wu  
-  <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2024  
-  [[arXiv]](https://arxiv.org/pdf/2406.02059) [[Code]](https://github.com/SongtaoLiu0823/GADC)
 
 * [FusionRetro: Molecule Representation Fusion via In-Context Learning for Retrosynthetic Planning](https://arxiv.org/abs/2209.15315)  
   <b><u>Songtao Liu</u></b>, Zhengkai Tu\*, Minkai Xu\*, Zuobai Zhang\*, Lu Lin, Rex Ying, Jian Tang, Peilin Zhao, Dinghao Wu  
   <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2023  
   [[arXiv]](https://arxiv.org/pdf/2209.15315) [[Code]](https://github.com/SongtaoLiu0823/FusionRetro)  
 
-* [Local Augmentation for Graph Neural Networks](https://arxiv.org/abs/2109.03856)  
-  <b><u>Songtao Liu</u></b>, Rex Ying, Hanze Dong, Lanqing Li, Tingyang Xu, Yu Rong, Peilin Zhao, Junzhou Huang, Dinghao Wu  
-  <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2022  
-  [[arXiv]](https://arxiv.org/pdf/2109.03856) [[Code]](https://github.com/SongtaoLiu0823/LAGNN) 
 
 ## Other Publications and Preprints 
 * [High-Layer Attention Pruning with Rescaling](https://arxiv.org/abs/2507.01900)  
@@ -51,10 +47,15 @@ My research focuses on scalable and efficient discrete generative modeling, with
   <em>arXiv</em>, 2025  
   [[arXiv]](https://arxiv.org/pdf/2507.01900)
 
-* [Evaluating Molecule Synthesizability via Retrosynthetic Planning and Reaction Prediction](https://arxiv.org/abs/2411.08306)  
-  <b><u>Songtao Liu</u></b>, Dandan Zhang, Zhengkai Tu, Hanjun Dai, Peng Liu  
-  <em>arXiv</em>, 2024  
-  [[arXiv]](https://arxiv.org/pdf/2411.08306) 
+* [Graph Adversarial Diffusion Convolution](https://arxiv.org/abs/2406.02059)  
+  <b><u>Songtao Liu</u></b>, Jinghui Chen, Tianfan Fu, Lu Lin, Marinka Zitnik, Dinghao Wu  
+  <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2024  
+  [[arXiv]](https://arxiv.org/pdf/2406.02059) [[Code]](https://github.com/SongtaoLiu0823/GADC)
+
+* [Local Augmentation for Graph Neural Networks](https://arxiv.org/abs/2109.03856)  
+  <b><u>Songtao Liu</u></b>, Rex Ying, Hanze Dong, Lanqing Li, Tingyang Xu, Yu Rong, Peilin Zhao, Junzhou Huang, Dinghao Wu  
+  <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2022  
+  [[arXiv]](https://arxiv.org/pdf/2109.03856) [[Code]](https://github.com/SongtaoLiu0823/LAGNN) 
 
 * [Higher-order Weighted Graph Convolutional Networks](https://arxiv.org/abs/1911.04129)  
   <b><u>Songtao Liu</u></b>, Lingwei Chen, Hanze Dong, Zihao Wang, Dinghao Wu, Zengfeng Huang  
