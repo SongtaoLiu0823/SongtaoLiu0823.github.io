@@ -19,7 +19,7 @@ My research focuses on scalable and efficient discrete generative modeling, with
 ## Selected Publications and Preprints    
 **\* denotes equal contribution (first, second, or senior)**
 
-I am an independent researcher. In my selected publications, all projects are from my ideas (100%), and I independently completed the coding, experiments, and writing (100%). The only exception is [CREBM](https://arxiv.org/abs/2406.02066), for which HD contributed writing from the residual energy-based modeling perspective. The other coauthors contributed only by supplying computing resources.
+I am an independent researcher. In my selected publications since 2024, all projects are from my ideas (100%), and I independently completed the coding, experiments, and writing (100%). The only exception is [CREBM](https://arxiv.org/abs/2406.02066), for which HD contributed writing from the residual energy-based modeling perspective. The other coauthors contributed only by supplying computing resources.
 
 * [Multi-Head Low-Rank Attention](https://drive.google.com/file/d/1W6Vm-urga96Hl4R17qq9A0f3mOQ5m5Fz/view?usp=share_link)  
   <b><u>Songtao Liu</u></b>, Hongwu Peng, Zhiwei Zhang, Zhengyu Chen, Yue Guo  
