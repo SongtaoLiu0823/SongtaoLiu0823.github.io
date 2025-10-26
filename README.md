@@ -23,7 +23,12 @@ I am an independent researcher. In my selected publications since 2024, all proj
 
 * [Multi-Head Low-Rank Attention](https://drive.google.com/file/d/1W6Vm-urga96Hl4R17qq9A0f3mOQ5m5Fz/view?usp=share_link)  
   <b><u>Songtao Liu</u></b>, Hongwu Peng, Zhiwei Zhang, Zhengyu Chen, Yue Guo  
-  [[pdf]](https://drive.google.com/file/d/1W6Vm-urga96Hl4R17qq9A0f3mOQ5m5Fz/view?usp=share_link) 
+  [[pdf]](https://drive.google.com/file/d/1W6Vm-urga96Hl4R17qq9A0f3mOQ5m5Fz/view?usp=share_link)
+
+* [High-Layer Attention Pruning with Rescaling](https://arxiv.org/abs/2507.01900)  
+  <b><u>Songtao Liu</u></b>, Peng Liu  
+  <em>arXiv</em>, 2025  
+  [[arXiv]](https://arxiv.org/pdf/2507.01900)
 
 * [Evaluating Molecule Synthesizability via Retrosynthetic Planning and Reaction Prediction](https://arxiv.org/abs/2411.08306)  
   <b><u>Songtao Liu</u></b>, Dandan Zhang, Zhengkai Tu, Hanjun Dai, Peng Liu  
@@ -43,11 +48,6 @@ I am an independent researcher. In my selected publications since 2024, all proj
 
 
 ## Other Publications and Preprints 
-* [High-Layer Attention Pruning with Rescaling](https://arxiv.org/abs/2507.01900)  
-  <b><u>Songtao Liu</u></b>, Peng Liu  
-  <em>arXiv</em>, 2025  
-  [[arXiv]](https://arxiv.org/pdf/2507.01900)
-
 * [Graph Adversarial Diffusion Convolution](https://arxiv.org/abs/2406.02059)  
   <b><u>Songtao Liu</u></b>, Jinghui Chen, Tianfan Fu, Lu Lin, Marinka Zitnik, Dinghao Wu  
   <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2024  
@@ -57,11 +57,6 @@ I am an independent researcher. In my selected publications since 2024, all proj
   <b><u>Songtao Liu</u></b>, Rex Ying, Hanze Dong, Lanqing Li, Tingyang Xu, Yu Rong, Peilin Zhao, Junzhou Huang, Dinghao Wu  
   <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2022  
   [[arXiv]](https://arxiv.org/pdf/2109.03856) [[Code]](https://github.com/SongtaoLiu0823/LAGNN) 
-
-* [Higher-order Weighted Graph Convolutional Networks](https://arxiv.org/abs/1911.04129)  
-  <b><u>Songtao Liu</u></b>, Lingwei Chen, Hanze Dong, Zihao Wang, Dinghao Wu, Zengfeng Huang  
-  <em>arXiv</em>, 2019  
-  [[arXiv]](https://arxiv.org/pdf/1911.04129)
 
   
 ## Professional Services
