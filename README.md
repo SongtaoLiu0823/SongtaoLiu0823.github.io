@@ -18,36 +18,43 @@ My research focuses on scalable and efficient discrete generative modeling, with
 
 ## Selected Publications and Preprints    
 **\* denotes equal contribution (first, second, or senior)**
-
-I am an independent researcher. In my selected publications since 2024, all projects are from my ideas (100%), and I independently completed the coding, experiments, and writing (100%). The only exception is [CREBM](https://arxiv.org/abs/2406.02066), for which HD contributed writing from the residual energy-based modeling perspective. The other coauthors contributed only by supplying computing resources.
+Since several people asked about the contributions of my paper, I have listed contributions under the selected publications.
 
 * [Multi-Head Low-Rank Attention](https://drive.google.com/file/d/1W6Vm-urga96Hl4R17qq9A0f3mOQ5m5Fz/view?usp=share_link)  
   <b><u>Songtao Liu</u></b>, Hongwu Peng, Zhiwei Zhang, Zhengyu Chen, Yue Guo  
   [[pdf]](https://drive.google.com/file/d/1W6Vm-urga96Hl4R17qq9A0f3mOQ5m5Fz/view?usp=share_link)
 
-* [High-Layer Attention Pruning with Rescaling](https://arxiv.org/abs/2507.01900)  
-  <b><u>Songtao Liu</u></b>, Peng Liu  
-  <em>arXiv</em>, 2025  
-  [[arXiv]](https://arxiv.org/pdf/2507.01900)
+  I led all technical aspects of the paper—including the core ideas, coding, experiments, and writing. My collaborators contributed computing resources.
 
 * [Evaluating Molecule Synthesizability via Retrosynthetic Planning and Reaction Prediction](https://arxiv.org/abs/2411.08306)  
   <b><u>Songtao Liu</u></b>, Dandan Zhang, Zhengkai Tu, Hanjun Dai, Peng Liu  
   <em>arXiv</em>, 2024  
   [[arXiv]](https://arxiv.org/pdf/2411.08306)
+
+  I led all technical aspects of the paper—including the core ideas, coding, experiments, and writing. DZ proposed using SciFinder to evaluate the synthetic routes, and we together conducted the human evaluation.
   
 * [Preference Optimization for Molecule Synthesis with Conditional Residual Energy-based Models](https://arxiv.org/abs/2406.02066)  
   <b><u>Songtao Liu</u></b>, Hanjun Dai, Yue Zhao, Peng Liu  
   <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2024  
   <em><strong style="color: red;">Oral Presentation</strong></em>    
-  [[arXiv]](https://arxiv.org/pdf/2406.02066) [[Code]](https://github.com/SongtaoLiu0823/CREBM) 
+  [[arXiv]](https://arxiv.org/pdf/2406.02066) [[Code]](https://github.com/SongtaoLiu0823/CREBM)
+
+  I led all technical aspects of the paper—including the core ideas, coding, experiments, and writing. HD proposed presenting the work through the lens of residual energy–based models. YZ supplied compute resources for rebuttal-period experiments.
 
 * [FusionRetro: Molecule Representation Fusion via In-Context Learning for Retrosynthetic Planning](https://arxiv.org/abs/2209.15315)  
   <b><u>Songtao Liu</u></b>, Zhengkai Tu\*, Minkai Xu\*, Zuobai Zhang\*, Lu Lin, Rex Ying, Jian Tang, Peilin Zhao, Dinghao Wu  
   <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2023  
-  [[arXiv]](https://arxiv.org/pdf/2209.15315) [[Code]](https://github.com/SongtaoLiu0823/FusionRetro)  
+  [[arXiv]](https://arxiv.org/pdf/2209.15315) [[Code]](https://github.com/SongtaoLiu0823/FusionRetro)
 
+  I led all technical aspects of the paper—including the core ideas, coding, experiments, and writing. ZT assisted with writing the introduction and related work. MX suggested organizing the presentation of our method into three principled steps. ZZ helped implement one baseline.
 
 ## Other Publications and Preprints 
+
+* [High-Layer Attention Pruning with Rescaling](https://arxiv.org/abs/2507.01900)  
+  <b><u>Songtao Liu</u></b>, Peng Liu  
+  <em>arXiv</em>, 2025  
+  [[arXiv]](https://arxiv.org/pdf/2507.01900)
+  
 * [Graph Adversarial Diffusion Convolution](https://arxiv.org/abs/2406.02059)  
   <b><u>Songtao Liu</u></b>, Jinghui Chen, Tianfan Fu, Lu Lin, Marinka Zitnik, Dinghao Wu  
   <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2024  
