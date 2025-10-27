@@ -18,6 +18,7 @@ My research focuses on scalable and efficient discrete generative modeling, with
 
 ## Selected Publications and Preprints    
 **\* denotes equal contribution (first, second, or senior)**
+
 Since several people asked about the contributions of my paper, I have listed contributions under the selected publications.
 
 * [Multi-Head Low-Rank Attention](https://drive.google.com/file/d/1W6Vm-urga96Hl4R17qq9A0f3mOQ5m5Fz/view?usp=share_link)  
