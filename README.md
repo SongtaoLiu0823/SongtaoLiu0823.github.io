@@ -21,9 +21,10 @@ My research focuses on scalable and efficient discrete generative modeling, with
 
 Since several people asked about the contributions of my paper, I have listed contributions under the selected publications.
 
-* [Multi-Head Low-Rank Attention](https://drive.google.com/file/d/1W6Vm-urga96Hl4R17qq9A0f3mOQ5m5Fz/view?usp=share_link)  
+* [Multi-Head Low-Rank Attention](https://openreview.net/pdf?id=lD13399d8J)  
   <b><u>Songtao Liu</u></b>, Hongwu Peng, Zhiwei Zhang, Zhengyu Chen, Yue Guo  
-  [[pdf]](https://drive.google.com/file/d/1W6Vm-urga96Hl4R17qq9A0f3mOQ5m5Fz/view?usp=share_link)
+  <em>NeurIPS Efficient Reasoning Workshop</em>, 2025  
+  [[pdf]](https://openreview.net/pdf?id=lD13399d8J)
 
   I led all technical aspects of the paper—including the core ideas, coding, experiments, and writing. My collaborators contributed computing resources.
 
