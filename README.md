@@ -19,21 +19,21 @@ My research focuses on scalable and efficient discrete generative modeling, with
 ## Selected Publications and Preprints    
 **\* denotes equal contribution (first, second, or senior)**
 
-Since several people asked about the contributions of my paper, I have listed contributions under the selected publications.
-
 * [Multi-Head Low-Rank Attention](https://openreview.net/pdf?id=lD13399d8J)  
   <b><u>Songtao Liu</u></b>, Hongwu Peng, Zhiwei Zhang, Zhengyu Chen, Yue Guo  
   <em>NeurIPS Efficient Reasoning Workshop</em>, 2025  
   [[pdf]](https://openreview.net/pdf?id=lD13399d8J)
 
-  I led all technical aspects of the paper—including the core ideas, coding, experiments, and writing. My collaborators contributed computing resources.
+* [High-Layer Attention Pruning with Rescaling](https://arxiv.org/abs/2507.01900)  
+  <b><u>Songtao Liu</u></b>, Peng Liu  
+  <em>arXiv</em>, 2025  
+  [[arXiv]](https://arxiv.org/pdf/2507.01900)
+  
 
 * [Evaluating Molecule Synthesizability via Retrosynthetic Planning and Reaction Prediction](https://arxiv.org/abs/2411.08306)  
   <b><u>Songtao Liu</u></b>, Dandan Zhang, Zhengkai Tu, Hanjun Dai, Peng Liu  
   <em>arXiv</em>, 2024  
   [[arXiv]](https://arxiv.org/pdf/2411.08306)
-
-  I led all technical aspects of the paper—including the core ideas, coding, experiments, and writing. DZ proposed using SciFinder to evaluate the synthetic routes, and we together conducted the human evaluation.
   
 * [Preference Optimization for Molecule Synthesis with Conditional Residual Energy-based Models](https://arxiv.org/abs/2406.02066)  
   <b><u>Songtao Liu</u></b>, Hanjun Dai, Yue Zhao, Peng Liu  
@@ -41,31 +41,22 @@ Since several people asked about the contributions of my paper, I have listed co
   <em><strong style="color: red;">Oral Presentation</strong></em>    
   [[arXiv]](https://arxiv.org/pdf/2406.02066) [[Code]](https://github.com/SongtaoLiu0823/CREBM)
 
-  I led all technical aspects of the paper—including the core ideas, coding, experiments, and writing. HD proposed presenting the work through the lens of residual energy–based models. YZ supplied compute resources for rebuttal-period experiments.
-
+* [Graph Adversarial Diffusion Convolution](https://arxiv.org/abs/2406.02059)  
+  <b><u>Songtao Liu</u></b>, Jinghui Chen, Tianfan Fu, Lu Lin, Marinka Zitnik, Dinghao Wu  
+  <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2024  
+  [[arXiv]](https://arxiv.org/pdf/2406.02059) [[Code]](https://github.com/SongtaoLiu0823/GADC)
+  
 * [FusionRetro: Molecule Representation Fusion via In-Context Learning for Retrosynthetic Planning](https://arxiv.org/abs/2209.15315)  
   <b><u>Songtao Liu</u></b>, Zhengkai Tu\*, Minkai Xu\*, Zuobai Zhang\*, Lu Lin, Rex Ying, Jian Tang, Peilin Zhao, Dinghao Wu  
   <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2023  
   [[arXiv]](https://arxiv.org/pdf/2209.15315) [[Code]](https://github.com/SongtaoLiu0823/FusionRetro)
 
-  I led all technical aspects of the paper—including the core ideas, coding, experiments, and writing. ZT assisted with writing the introduction and related work. MX suggested organizing the presentation of our method into three principled steps. ZZ helped implement one baseline.
-
-## Other Publications and Preprints 
-
-* [High-Layer Attention Pruning with Rescaling](https://arxiv.org/abs/2507.01900)  
-  <b><u>Songtao Liu</u></b>, Peng Liu  
-  <em>arXiv</em>, 2025  
-  [[arXiv]](https://arxiv.org/pdf/2507.01900)
-  
-* [Graph Adversarial Diffusion Convolution](https://arxiv.org/abs/2406.02059)  
-  <b><u>Songtao Liu</u></b>, Jinghui Chen, Tianfan Fu, Lu Lin, Marinka Zitnik, Dinghao Wu  
-  <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2024  
-  [[arXiv]](https://arxiv.org/pdf/2406.02059) [[Code]](https://github.com/SongtaoLiu0823/GADC)
 
 * [Local Augmentation for Graph Neural Networks](https://arxiv.org/abs/2109.03856)  
   <b><u>Songtao Liu</u></b>, Rex Ying, Hanze Dong, Lanqing Li, Tingyang Xu, Yu Rong, Peilin Zhao, Junzhou Huang, Dinghao Wu  
   <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2022  
-  [[arXiv]](https://arxiv.org/pdf/2109.03856) [[Code]](https://github.com/SongtaoLiu0823/LAGNN) 
+  [[arXiv]](https://arxiv.org/pdf/2109.03856) [[Code]](https://github.com/SongtaoLiu0823/LAGNN)
+  
 
   
 ## Professional Services
