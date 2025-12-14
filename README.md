@@ -18,40 +18,54 @@ My research focuses on scalable and efficient discrete generative modeling, with
 
 ## Papers    
 **\* denotes equal contribution (first, second, or senior)**  
-**Yellow-marked entries are Selection Publications**
+**📌 Yellow-marked entries are Selection Publications**
 
-* <mark style="background-color: #FFFACD;">[Multi-Head Low-Rank Attention](https://openreview.net/pdf?id=lD13399d8J)  
+<div style="background-color: #FFFACD; padding: 10px; border-radius: 5px;">
+
+* [Multi-Head Low-Rank Attention](https://openreview.net/pdf?id=lD13399d8J)  
   <b><u>Songtao Liu</u></b>, Hongwu Peng, Zhiwei Zhang, Zhengyu Chen, Yue Guo  
   <em>NeurIPS Efficient Reasoning Workshop</em>, 2025  
-  [[pdf]](https://openreview.net/pdf?id=lD13399d8J)</mark>
+  [[pdf]](https://openreview.net/pdf?id=lD13399d8J)
+
+</div>
 
 * [High-Layer Attention Pruning with Rescaling](https://arxiv.org/abs/2507.01900)  
   <b><u>Songtao Liu</u></b>, Peng Liu  
   <em>arXiv</em>, 2025  
   [[arXiv]](https://arxiv.org/pdf/2507.01900)
-  
 
-* <mark style="background-color: #FFFACD;">[Evaluating Molecule Synthesizability via Retrosynthetic Planning and Reaction Prediction](https://arxiv.org/abs/2411.08306)  
+<div style="background-color: #FFFACD; padding: 10px; border-radius: 5px;">
+
+* [Evaluating Molecule Synthesizability via Retrosynthetic Planning and Reaction Prediction](https://arxiv.org/abs/2411.08306)  
   <b><u>Songtao Liu</u></b>, Dandan Zhang, Zhengkai Tu, Hanjun Dai, Peng Liu  
   <em>arXiv</em>, 2024  
-  [[arXiv]](https://arxiv.org/pdf/2411.08306)</mark>
-  
-* <mark style="background-color: #FFFACD;">[Preference Optimization for Molecule Synthesis with Conditional Residual Energy-based Models](https://arxiv.org/abs/2406.02066)  
+  [[arXiv]](https://arxiv.org/pdf/2411.08306)
+
+</div>
+
+<div style="background-color: #FFFACD; padding: 10px; border-radius: 5px;">
+
+* [Preference Optimization for Molecule Synthesis with Conditional Residual Energy-based Models](https://arxiv.org/abs/2406.02066)  
   <b><u>Songtao Liu</u></b>, Hanjun Dai, Yue Zhao, Peng Liu  
   <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2024  
   <em><strong style="color: red;">Oral Presentation</strong></em>    
-  [[arXiv]](https://arxiv.org/pdf/2406.02066) [[Code]](https://github.com/SongtaoLiu0823/CREBM)</mark>
+  [[arXiv]](https://arxiv.org/pdf/2406.02066) [[Code]](https://github.com/SongtaoLiu0823/CREBM)
+
+</div>
 
 * [Graph Adversarial Diffusion Convolution](https://arxiv.org/abs/2406.02059)  
   <b><u>Songtao Liu</u></b>, Jinghui Chen, Tianfan Fu, Lu Lin, Marinka Zitnik, Dinghao Wu  
   <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2024  
   [[arXiv]](https://arxiv.org/pdf/2406.02059) [[Code]](https://github.com/SongtaoLiu0823/GADC)
-  
-* <mark style="background-color: #FFFACD;">[FusionRetro: Molecule Representation Fusion via In-Context Learning for Retrosynthetic Planning](https://arxiv.org/abs/2209.15315)  
+
+<div style="background-color: #FFFACD; padding: 10px; border-radius: 5px;">
+
+* [FusionRetro: Molecule Representation Fusion via In-Context Learning for Retrosynthetic Planning](https://arxiv.org/abs/2209.15315)  
   <b><u>Songtao Liu</u></b>, Zhengkai Tu\*, Minkai Xu\*, Zuobai Zhang\*, Lu Lin, Rex Ying, Jian Tang, Peilin Zhao, Dinghao Wu  
   <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2023  
-  [[arXiv]](https://arxiv.org/pdf/2209.15315) [[Code]](https://github.com/SongtaoLiu0823/FusionRetro)</mark>
+  [[arXiv]](https://arxiv.org/pdf/2209.15315) [[Code]](https://github.com/SongtaoLiu0823/FusionRetro)
 
+</div>
 
 * [Local Augmentation for Graph Neural Networks](https://arxiv.org/abs/2109.03856)  
   <b><u>Songtao Liu</u></b>, Rex Ying, Hanze Dong, Lanqing Li, Tingyang Xu, Yu Rong, Peilin Zhao, Junzhou Huang, Dinghao Wu  
@@ -62,7 +76,7 @@ My research focuses on scalable and efficient discrete generative modeling, with
   
 ## Professional Services
 
-Conference/Journal Reviewer: ICML 2022/2024/2025, NeurIPS 2022/2023/2024/2025, ICLR 2024/2025, AISTATS 2024, TMLR  
+Conference/Journal Reviewer: ICML 2022/2024/2025, NeurIPS 2022/2023/2024/2025, ICLR 2024/2025/2026, AISTATS 2024, TMLR  
 
 ## Teaching
 DS 330: Visual Analytics, Penn State, Spring 2025  
