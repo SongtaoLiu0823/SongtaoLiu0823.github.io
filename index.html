@@ -3,234 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Songtao Liu | Penn State</title>
+    <title>Songtao Liu</title>
     <style>
-        /* 全局样式设置 */
+        /* --- 这一部分 CSS 是为了模仿 GitHub README 的原生显示效果 --- */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 900px; /* 页面最大宽度 */
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            font-size: 16px;
+            line-height: 1.5;
+            word-wrap: break-word;
+            color: #24292f;
+            background-color: #ffffff;
+            max-width: 900px; /* 限制宽度，保持阅读舒适 */
             margin: 0 auto;
-            padding: 40px 20px;
-            background-color: #fdfdfd;
+            padding: 32px;
         }
 
-        /* 链接样式 */
         a {
-            color: #0066cc;
+            color: #0969da;
             text-decoration: none;
         }
         a:hover {
             text-decoration: underline;
         }
 
-        /* 标题样式 */
-        h1 {
-            font-size: 2.5em;
-            margin-bottom: 5px;
-            color: #111;
+        h1, h2, h3 {
+            margin-top: 24px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            line-height: 1.25;
         }
+
         h2 {
-            border-bottom: 2px solid #eaeaea;
-            padding-bottom: 10px;
-            margin-top: 40px;
-            color: #222;
-        }
-        h3 {
-            margin-top: 25px;
-            font-size: 1.2em;
-            color: #444;
+            padding-bottom: .3em;
+            font-size: 1.5em;
+            border-bottom: 1px solid #d0d7de;
         }
 
-        /* 顶部个人信息 */
-        .header {
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .contact-info {
-            font-size: 1.1em;
-            margin-top: 10px;
-        }
-
-        /* Job Market 提示框 */
-        .news-box {
-            border: 2px solid #d9534f;
-            background-color: #fff5f5;
-            color: #d9534f;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-            font-weight: bold;
-            margin: 20px 0;
-            font-size: 1.1em;
-        }
-
-        /* 论文列表样式 */
-        ul {
-            list-style-type: none; /* 去掉默认的小圆点 */
-            padding-left: 0;
-        }
-        li {
-            margin-bottom: 15px;
-        }
-        .paper-title {
-            font-weight: bold;
-            font-size: 1.05em;
-        }
-        .authors {
-            color: #555;
-        }
-        .venue {
-            font-style: italic;
-            color: #666;
-        }
-        .tag {
-            display: inline-block;
-            font-size: 0.85em;
-            margin-left: 5px;
-            font-weight: bold;
-        }
-        .oral { color: #d9534f; }
-
-        /* --- 核心部分：黄色背景包裹 --- */
-        .selected-publications {
-            background-color: #fffce3; /* 柔和的黄色背景 */
-            border: 1px solid #e6dbb9;
-            border-radius: 8px;
-            padding: 20px 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-        }
-        .selected-publications h3 {
+        p {
             margin-top: 0;
-            color: #8a6d3b;
-            border-bottom: 1px solid #e6dbb9;
-            padding-bottom: 8px;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
+        }
+
+        ul {
+            padding-left: 2em;
+            margin-top: 0;
+            margin-bottom: 16px;
+        }
+
+        li {
+            margin-bottom: 8px; /* 列表项之间稍微留点空隙 */
+        }
+
+        hr {
+            height: 0.25em;
+            padding: 0;
+            margin: 24px 0;
+            background-color: #d0d7de;
+            border: 0;
+        }
+
+        /* --- 自定义黄色高亮样式 --- */
+        .highlight-yellow {
+            background-color: #FFFACD; /* 柠檬绸色 */
+            padding: 12px;
+            border-radius: 6px;
+            display: block; /* 确保背景占满整行 */
+            margin-left: -12px; /* 视觉微调，让背景色稍微向左延伸一点，包裹更自然 */
+            margin-right: -12px;
         }
         
-        /* 底部地图 */
-        .footer-map {
-            margin-top: 60px;
-            text-align: center;
+        /* 修正高亮块内的链接颜色，保持清晰 */
+        .highlight-yellow a {
+            font-weight: 600; 
         }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <h1>Songtao Liu</h1>
-        <div class="contact-info">
-            <a href="https://scholar.google.com/citations?user=OPZ_9L4AAAAJ&hl=en">[Google Scholar]</a> &nbsp;
-            <a href="https://github.com/SongtaoLiu0823">[Github]</a> &nbsp;
-            <br>
+    <div style="text-align: center;">
+        <h1 style="font-size: 2.5em; margin-bottom: 10px;">Songtao Liu</h1>
+        <hr style="height: 1.5px; background-color: gray; border: none;">
+        
+        <p>
+            <a href="https://scholar.google.com/citations?user=OPZ_9L4AAAAJ&hl=en">[Google Scholar]</a>
+            &nbsp;
+            <a href="https://github.com/SongtaoLiu0823">[Github]</a><br>
             Email: <a href="mailto:skl5761@psu.edu">skl5761@psu.edu</a>
-        </div>
+        </p>
     </div>
 
-    <section>
-        <p>
-            Hi, this is Songtao. I'm currently a Computer Science Ph.D. candidate at <strong>Penn State University</strong>. 
-            I received my B.S. in Computer Science and Data Science from Fudan University.
-        </p>
-        <p>
-            My research focuses on scalable and efficient discrete generative modeling, with an emphasis on developing algorithms that reduce inference cost and solve diverse problems across domains such as language.
-        </p>
-    </section>
+    <p>
+        Hi, this is Songtao. I'm currently a Computer Science Ph.D. candidate at Penn State. I received my B.S. in Computer Science and Data Science from Fudan University.
+    </p>
+    <p>
+        My research focuses on scalable and efficient discrete generative modeling, with an emphasis on developing algorithms that reduce inference cost and solve diverse problems across domains such as language.
+    </p>
 
-    <div class="news-box">
-        🔥 I am on the job market for 2025-2026!
-    </div>
+    <p><strong>I am on the job market for 2025-2026!</strong></p>
 
-    <section>
-        <h2>Publications</h2>
-        <p style="font-size: 0.9em; color: #666;">* denotes equal contribution</p>
+    <h2>Papers</h2>
+    <p>
+        <strong>* denotes equal contribution (first, second, or senior)</strong><br>
+        <strong>📌 Yellow-marked entries are Selected Publications</strong>
+    </p>
 
-        <div class="selected-publications">
-            <h3>🌟 Selected Publications</h3>
-            <ul>
-                <li>
-                    <a href="https://openreview.net/pdf?id=lD13399d8J" class="paper-title">Multi-Head Low-Rank Attention</a><br>
-                    <span class="authors"><b><u>Songtao Liu</u></b>, Hongwu Peng, Zhiwei Zhang, Zhengyu Chen, Yue Guo</span><br>
-                    <span class="venue">NeurIPS Efficient Reasoning Workshop, 2025</span><br>
-                    <a href="https://openreview.net/pdf?id=lD13399d8J">[pdf]</a>
-                </li>
+    <ul style="list-style-type: disc;">
+        
+        <li>
+            <div class="highlight-yellow">
+                <a href="https://openreview.net/pdf?id=lD13399d8J">Multi-Head Low-Rank Attention</a><br>
+                <b><u>Songtao Liu</u></b>, Hongwu Peng, Zhiwei Zhang, Zhengyu Chen, Yue Guo<br>
+                <em>NeurIPS Efficient Reasoning Workshop</em>, 2025<br>
+                <a href="https://openreview.net/pdf?id=lD13399d8J">[pdf]</a>
+            </div>
+        </li>
 
-                <li>
-                    <a href="https://arxiv.org/abs/2411.08306" class="paper-title">Evaluating Molecule Synthesizability via Retrosynthetic Planning and Reaction Prediction</a><br>
-                    <span class="authors"><b><u>Songtao Liu</u></b>, Dandan Zhang, Zhengkai Tu, Hanjun Dai, Peng Liu</span><br>
-                    <span class="venue">arXiv, 2024</span><br>
-                    <a href="https://arxiv.org/pdf/2411.08306">[arXiv]</a>
-                </li>
+        <li>
+            <a href="https://arxiv.org/abs/2507.01900">High-Layer Attention Pruning with Rescaling</a><br>
+            <b><u>Songtao Liu</u></b>, Peng Liu<br>
+            <em>arXiv</em>, 2025<br>
+            <a href="https://arxiv.org/pdf/2507.01900">[arXiv]</a>
+        </li>
 
-                <li>
-                    <a href="https://arxiv.org/abs/2406.02066" class="paper-title">Preference Optimization for Molecule Synthesis with Conditional Residual Energy-based Models</a><br>
-                    <span class="authors"><b><u>Songtao Liu</u></b>, Hanjun Dai, Yue Zhao, Peng Liu</span><br>
-                    <span class="venue">International Conference on Machine Learning <b>(ICML)</b>, 2024</span>
-                    <span class="tag oral">Oral Presentation</span><br>
-                    <a href="https://arxiv.org/pdf/2406.02066">[arXiv]</a> <a href="https://github.com/SongtaoLiu0823/CREBM">[Code]</a>
-                </li>
+        <li>
+            <div class="highlight-yellow">
+                <a href="https://arxiv.org/abs/2411.08306">Evaluating Molecule Synthesizability via Retrosynthetic Planning and Reaction Prediction</a><br>
+                <b><u>Songtao Liu</u></b>, Dandan Zhang, Zhengkai Tu, Hanjun Dai, Peng Liu<br>
+                <em>arXiv</em>, 2024<br>
+                <a href="https://arxiv.org/pdf/2411.08306">[arXiv]</a>
+            </div>
+        </li>
 
-                <li>
-                    <a href="https://arxiv.org/abs/2209.15315" class="paper-title">FusionRetro: Molecule Representation Fusion via In-Context Learning for Retrosynthetic Planning</a><br>
-                    <span class="authors"><b><u>Songtao Liu</u></b>, Zhengkai Tu*, Minkai Xu*, Zuobai Zhang*, Lu Lin, Rex Ying, Jian Tang, Peilin Zhao, Dinghao Wu</span><br>
-                    <span class="venue">International Conference on Machine Learning <b>(ICML)</b>, 2023</span><br>
-                    <a href="https://arxiv.org/pdf/2209.15315">[arXiv]</a> <a href="https://github.com/SongtaoLiu0823/FusionRetro">[Code]</a>
-                </li>
-            </ul>
-        </div>
+        <li>
+            <div class="highlight-yellow">
+                <a href="https://arxiv.org/abs/2406.02066">Preference Optimization for Molecule Synthesis with Conditional Residual Energy-based Models</a><br>
+                <b><u>Songtao Liu</u></b>, Hanjun Dai, Yue Zhao, Peng Liu<br>
+                <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2024<br>
+                <em><strong style="color: red;">Oral Presentation</strong></em><br>
+                <a href="https://arxiv.org/pdf/2406.02066">[arXiv]</a> <a href="https://github.com/SongtaoLiu0823/CREBM">[Code]</a>
+            </div>
+        </li>
 
-        <h3>Other Publications</h3>
-        <ul>
-            <li>
-                <a href="https://arxiv.org/abs/2507.01900" class="paper-title">High-Layer Attention Pruning with Rescaling</a><br>
-                <span class="authors"><b><u>Songtao Liu</u></b>, Peng Liu</span><br>
-                <span class="venue">arXiv, 2025</span><br>
-                <a href="https://arxiv.org/pdf/2507.01900">[arXiv]</a>
-            </li>
+        <li>
+            <a href="https://arxiv.org/abs/2406.02059">Graph Adversarial Diffusion Convolution</a><br>
+            <b><u>Songtao Liu</u></b>, Jinghui Chen, Tianfan Fu, Lu Lin, Marinka Zitnik, Dinghao Wu<br>
+            <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2024<br>
+            <a href="https://arxiv.org/pdf/2406.02059">[arXiv]</a> <a href="https://github.com/SongtaoLiu0823/GADC">[Code]</a>
+        </li>
 
-            <li>
-                <a href="https://arxiv.org/abs/2406.02059" class="paper-title">Graph Adversarial Diffusion Convolution</a><br>
-                <span class="authors"><b><u>Songtao Liu</u></b>, Jinghui Chen, Tianfan Fu, Lu Lin, Marinka Zitnik, Dinghao Wu</span><br>
-                <span class="venue">International Conference on Machine Learning <b>(ICML)</b>, 2024</span><br>
-                <a href="https://arxiv.org/pdf/2406.02059">[arXiv]</a> <a href="https://github.com/SongtaoLiu0823/GADC">[Code]</a>
-            </li>
+        <li>
+            <div class="highlight-yellow">
+                <a href="https://arxiv.org/abs/2209.15315">FusionRetro: Molecule Representation Fusion via In-Context Learning for Retrosynthetic Planning</a><br>
+                <b><u>Songtao Liu</u></b>, Zhengkai Tu*, Minkai Xu*, Zuobai Zhang*, Lu Lin, Rex Ying, Jian Tang, Peilin Zhao, Dinghao Wu<br>
+                <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2023<br>
+                <a href="https://arxiv.org/pdf/2209.15315">[arXiv]</a> <a href="https://github.com/SongtaoLiu0823/FusionRetro">[Code]</a>
+            </div>
+        </li>
 
-            <li>
-                <a href="https://arxiv.org/abs/2109.03856" class="paper-title">Local Augmentation for Graph Neural Networks</a><br>
-                <span class="authors"><b><u>Songtao Liu</u></b>, Rex Ying, Hanze Dong, Lanqing Li, Tingyang Xu, Yu Rong, Peilin Zhao, Junzhou Huang, Dinghao Wu</span><br>
-                <span class="venue">International Conference on Machine Learning <b>(ICML)</b>, 2022</span><br>
-                <a href="https://arxiv.org/pdf/2109.03856">[arXiv]</a> <a href="https://github.com/SongtaoLiu0823/LAGNN">[Code]</a>
-            </li>
-        </ul>
-    </section>
+        <li>
+            <a href="https://arxiv.org/abs/2109.03856">Local Augmentation for Graph Neural Networks</a><br>
+            <b><u>Songtao Liu</u></b>, Rex Ying, Hanze Dong, Lanqing Li, Tingyang Xu, Yu Rong, Peilin Zhao, Junzhou Huang, Dinghao Wu<br>
+            <em>International Conference on Machine Learning</em> <b>(ICML)</b>, 2022<br>
+            <a href="https://arxiv.org/pdf/2109.03856">[arXiv]</a> <a href="https://github.com/SongtaoLiu0823/LAGNN">[Code]</a>
+        </li>
+    </ul>
 
-    <section>
-        <h2>Professional Services</h2>
-        <ul>
-            <li><strong>Conference/Journal Reviewer:</strong></li>
-            <li>ICML 2022/2024/2025</li>
-            <li>NeurIPS 2022/2023/2024/2025</li>
-            <li>ICLR 2024/2025/2026</li>
-            <li>AISTATS 2024</li>
-            <li>TMLR</li>
-        </ul>
-    </section>
+    <h2>Professional Services</h2>
+    <p>
+        Conference/Journal Reviewer: ICML 2022/2024/2025, NeurIPS 2022/2023/2024/2025, ICLR 2024/2025/2026, AISTATS 2024, TMLR
+    </p>
 
-    <section>
-        <h2>Teaching</h2>
-        <ul>
-            <li><strong>DS 330:</strong> Visual Analytics, Penn State, Spring 2025</li>
-            <li><strong>DS 320:</strong> Data Integration and Fusion, Penn State, Spring 2024</li>
-            <li><strong>DS/CMPSC 410:</strong> Programming Models for Big Data, Penn State, Fall 2023</li>
-            <li><strong>IST 815:</strong> Foundations of Information Security and Assurance, Penn State, Fall 2023</li>
-        </ul>
-    </section>
+    <h2>Teaching</h2>
+    <ul style="list-style-type: none; padding-left: 0;">
+        <li>DS 330: Visual Analytics, Penn State, Spring 2025</li>
+        <li>DS 320: Data Integration and Fusion, Penn State, Spring 2024</li>
+        <li>DS/CMPSC 410: Programming Models for Big Data, Penn State, Fall 2023</li>
+        <li>IST 815: Foundations of Information Security and Assurance, Penn State, Fall 2023</li>
+    </ul>
 
-    <div class="footer-map">
+    <div style="margin-top: 40px; text-align: center;">
         <a href="https://clustrmaps.com/site/1bpjp" title="Visit tracker">
-            <img src="//clustrmaps.com/map_v2.png?cl=080808&w=300&t=tt&d=Acz3MGykYJy2Y-5DYlROlwwbSCLa2kU5-qmrsC3MtMM&co=ffffff&ct=808080" />
+            <img src="//clustrmaps.com/map_v2.png?cl=080808&w=300&t=tt&d=Acz3MGykYJy2Y-5DYlROlwwbSCLa2kU5-qmrsC3MtMM&co=ffffff&ct=808080" alt="ClustrMaps" />
         </a>
     </div>
 
