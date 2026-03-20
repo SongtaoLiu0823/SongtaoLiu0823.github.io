@@ -461,7 +461,7 @@
                 <li>A <strong>partial RoPE<sup><a href="#note7">7</a></sup> key</strong> $\bm{K}^{\text{RoPE}} = \operatorname{RoPE}\left(\bm{H}\bm{W}^{\text{KR}}\right)$, with dimension $d_h^R = 0.5d_h$</li>
             </ul>
             <p>
-                Only $\bm{C}^{\text{KV}}$ $\left(4d_h\right)$ and $\bm{K}^{\text{RoPE}}$ $\left(0.5d_h^R\right)$ are cached during inference, for a total of $4.5d_h^R$ per token—dramatically smaller than MHA's $2hd_h^R$ per token. The full keys and values for all $h$ heads are computed from the single latent $\bm{C}^{\text{KV}}$ via up-projection matrices $\bm{W}^{\text{UK}}$ and $\bm{W}^{\text{UV}}$.
+                Only $\bm{C}^{\text{KV}}$ $\left(4d_h\right)$ and $\bm{K}^{\text{RoPE}}$ $\left(0.5d_h\right)$ are cached during inference, for a total of $4.5d_h$ per token—dramatically smaller than MHA's $2hd_h^R$ per token. The full keys and values for all $h$ heads are computed from the single latent $\bm{C}^{\text{KV}}$ via up-projection matrices $\bm{W}^{\text{UK}}$ and $\bm{W}^{\text{UV}}$.
             </p>
 
             <h3 id="mla-absorption">2.2 Efficient Decoding via Weight Absorption</h3>
