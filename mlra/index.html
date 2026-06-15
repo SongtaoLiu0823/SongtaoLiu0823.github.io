@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Head Low-Rank Attention</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"
+    onload="renderMathInElement(document.body, {
+        delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '\\[', right: '\\]', display: true},
+            {left: '$', right: '$', display: false},
+            {left: '\\(', right: '\\)', display: false}
+        ],
+        macros: {
+            '\\tens': '\\boldsymbol{\\mathsf{#1}}',
+        }
+    });"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f5f5f5;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+            max-width: 1600px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            position: relative; /* needed for absolute note positioning */
+        }
+
+        /* Left TOC */
+        .sidebar-left {
+            width: 220px;
+            padding: 30px 15px;
+            background: #fafafa;
+            border-right: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            height: 100vh;
+            overflow-y: auto;
+            flex-shrink: 0;
+        }
+
+        .toc-title {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #2c3e50;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #2980b9;
+        }
+
+        .toc-list {
+            list-style: none;
+        }
+
+        .toc-list li {
+            margin-bottom: 6px;
+        }
+
+        .toc-list a {
+            color: #555;
+            text-decoration: none;
+            display: block;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 13px;
+            transition: all 0.2s ease;
+        }
+
+        .toc-list a:hover {
+            background: #eaf4fb;
+            color: #2980b9;
+            transform: translateX(4px);
+        }
+
+        .toc-list .toc-h2 { padding-left: 18px; }
+        .toc-list .toc-h3 { padding-left: 34px; color: #777; }
+
+        /* Main content */
+        .content {
+            flex: 1;
+            padding: 50px 70px;
+            max-width: 960px;
+            min-width: 0;
+        }
+
+        .blog-header {
+            margin-bottom: 40px;
+            border-bottom: 3px solid #2980b9;
+            padding-bottom: 20px;
+        }
+
+        .blog-header h1 {
+            font-size: 30px;
+            color: #1a252f;
+            line-height: 1.3;
+            margin-bottom: 14px;
+        }
+
+        .blog-meta {
+            font-size: 14px;
+            color: #888;
+            margin-bottom: 10px;
+        }
+
+        .blog-meta a { color: #2980b9; text-decoration: none; }
+
+        .content h2 {
+            font-size: 22px;
+            margin-top: 45px;
+            margin-bottom: 14px;
+            color: #1a252f;
+            padding-left: 12px;
+            border-left: 4px solid #2980b9;
+        }
+
+        .content h3 {
+            font-size: 17px;
+            margin-top: 28px;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .content p {
+            margin-bottom: 16px;
+            line-height: 1.85;
+            color: #444;
+            text-align: justify;
+        }
+
+        .content ul, .content ol {
+            margin-left: 28px;
+            margin-bottom: 16px;
+        }
+
+        .content li {
+            margin-bottom: 6px;
+            line-height: 1.75;
+            color: #444;
+        }
+
+        .content code {
+            background: #f0f4f8;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'SFMono-Regular', Consolas, monospace;
+            font-size: 13px;
+            color: #c0392b;
+        }
+
+        .content strong { color: #2c3e50; }
+
+        /* Callout boxes */
+        .callout {
+            border-left: 4px solid #2980b9;
+            background: #f0f8ff;
+            padding: 14px 18px;
+            margin: 20px 0;
+            border-radius: 0 6px 6px 0;
+        }
+
+        .callout.warning {
+            border-left-color: #e67e22;
+            background: #fdf6ec;
+        }
+
+        .callout.success {
+            border-left-color: #27ae60;
+            background: #eafaf1;
+        }
+
+        .callout p { margin: 0; font-size: 14.5px; }
+
+        /* Table */
+        .table-wrapper { overflow-x: auto; margin: 24px 0; }
+
+        table { border-collapse: collapse; width: 100%; font-size: 14px; }
+
+        th {
+            background: #2980b9;
+            color: white;
+            padding: 10px 14px;
+            text-align: left;
+        }
+
+        td { padding: 8px 14px; border-bottom: 1px solid #e0e0e0; }
+        tr:nth-child(even) td { background: #f8f9fa; }
+        tr.highlight td {
+            background: #eaf4fb;
+            font-weight: 600;
+            color: #2980b9;
+        }
+
+        /* Figure area */
+        .figure-area { margin: 28px 0; text-align: center; }
+        .figure-area .fig-caption {
+            font-size: 13px;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        .arch-box {
+            background: #f8f9fa;
+            border: 1px dashed #bdc3c7;
+            border-radius: 8px;
+            padding: 28px;
+            margin: 22px 0;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 13px;
+        }
+
+        /* Formula display */
+        .formula-block {
+            background: #fafbfc;
+            border: 1px solid #dde3e8;
+            border-radius: 6px;
+            padding: 16px 22px;
+            margin: 18px 0;
+            font-family: 'Georgia', serif;
+            font-size: 14px;
+            color: #2c3e50;
+            overflow-x: auto;
+        }
+
+        /* =============================================
+           RIGHT SIDEBAR — margin-note style
+           ============================================= */
+        .sidebar-right {
+            width: 230px;
+            flex-shrink: 0;
+            background: #fffef7;
+            border-left: 1px solid #e8e4d8;
+            position: relative; /* absolute children position inside here */
+        }
+
+        /* Sticky "Notes" header inside sidebar */
+        .notes-header {
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: #fffef7;
+            padding: 28px 16px 14px 16px;
+            border-bottom: 1px solid #f0e9d2;
+        }
+
+        .notes-title {
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #b08030;
+        }
+
+        /* Each note — absolutely positioned by JS */
+        .note-item {
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 12px;
+            background: white;
+            padding: 10px 12px;
+            border-radius: 6px;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.07);
+            border-left: 3px solid #f39c12;
+            transition: top 0.25s ease, box-shadow 0.2s;
+        }
+
+        .note-item:hover {
+            box-shadow: 0 3px 12px rgba(0,0,0,0.13);
+            z-index: 5;
+        }
+
+        .note-item.note-highlight {
+            border-left-color: #f1c40f;
+            background: #fffdf0;
+        }
+
+        .note-ref {
+            font-size: 10px;
+            color: #b08030;
+            margin-bottom: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+
+        .note-content {
+            font-size: 12.5px;
+            line-height: 1.55;
+            color: #555;
+        }
+
+        /* Superscript reference links — styled for visibility */
+        sup a {
+            color: #2980b9 !important;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        sup a:hover { text-decoration: underline; }
+
+        /* Result stat boxes */
+        .stats-row {
+            display: flex;
+            gap: 16px;
+            margin: 24px 0;
+            flex-wrap: wrap;
+        }
+
+        .stat-box {
+            flex: 1;
+            min-width: 130px;
+            background: linear-gradient(135deg, #2980b9, #1a6ea0);
+            color: white;
+            padding: 16px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-box .stat-num { font-size: 26px; font-weight: 700; display: block; }
+        .stat-box .stat-label { font-size: 12px; opacity: 0.85; margin-top: 4px; }
+        .stat-box.green { background: linear-gradient(135deg, #27ae60, #1e9152); }
+        .stat-box.orange { background: linear-gradient(135deg, #e67e22, #ca6f1e); }
+
+        /* Abstract */
+        .abstract-box {
+            background: #f0f8ff;
+            border: 1px solid #b3d9f0;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 30px 0;
+        }
+
+        .abstract-box h3 {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #2980b9;
+            margin-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .abstract-box p { font-size: 14.5px; color: #2c3e50; margin: 0; }
+
+        /* Section divider */
+        .section-divider {
+            border: none;
+            border-top: 1px solid #e8ecef;
+            margin: 40px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .sidebar-right { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .container { flex-direction: column; }
+            .sidebar-left { width: 100%; height: auto; position: relative; }
+            .content { padding: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left TOC -->
+        <aside class="sidebar-left">
+            <h2 class="toc-title">Contents</h2>
+            <ul class="toc-list">
+                <li><a href="#intro">1. Introduction</a></li>
+                <li><a href="#kv-bottleneck" class="toc-h2">1.1 The KV Cache Bottleneck</a></li>
+                <li><a href="#existing-work" class="toc-h2">1.2 Existing Approaches</a></li>
+                <li><a href="#mla">2. Multi-Head Latent Attention</a></li>
+                <li><a href="#mla-mechanism" class="toc-h2">2.1 How MLA Works</a></li>
+                <li><a href="#mla-absorption" class="toc-h2">2.2 Efficient Decoding via Absorption</a></li>
+                <li><a href="#mla-tp-problem" class="toc-h2">2.3 Why MLA Fails Under TP</a></li>
+                <li><a href="#method">3. Our Method: MLRA</a></li>
+                <li><a href="#block-decomp" class="toc-h2">3.1 Block Decomposition Insight</a></li>
+                <li><a href="#mlra4" class="toc-h2">3.2 MLRA-4</a></li>
+                <li><a href="#results">4. Experiments &amp; Results</a></li>
+                <li><a href="#ppl-results" class="toc-h2">4.1 Validation Perplexity</a></li>
+                <li><a href="#reasoning-results" class="toc-h2">4.2 Common-sense Reasoning</a></li>
+                <li><a href="#decoding-speed" class="toc-h2">4.3 Decoding Speed</a></li>
+                <li><a href="#throughput" class="toc-h2">4.4 Decoding Throughput</a></li>
+                <li><a href="#conclusion">5. Conclusion</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="content">
+            <div class="blog-header">
+                <h1>Multi-Head Low-Rank Attention</h1>
+                <div class="blog-meta">
+                    Songtao Liu &nbsp;&nbsp; Yue Guo
+                </div>
+                <div style="margin: 14px 0 10px 0; font-size: 14px; line-height: 2;">
+                    <span><strong>Paper:</strong> <a href="https://arxiv.org/pdf/2603.02188" target="_blank" style="color:#2980b9;">https://arxiv.org/pdf/2603.02188</a></span><br>
+                    <span><strong>Code:</strong> <a href="https://github.com/SongtaoLiu0823/MLRA" target="_blank" style="color:#2980b9;">https://github.com/SongtaoLiu0823/MLRA</a></span><br>
+                    <span><strong>Data &amp; Weights:</strong> <a href="https://huggingface.co/Soughing/MLRA" target="_blank" style="color:#2980b9;">https://huggingface.co/Soughing/MLRA</a></span>
+                </div>
+                <div class="blog-meta" style="margin-top: 10px; font-size: 13px;">
+                    If you have any questions, please contact
+                    <a href="mailto:skl5761@psu.edu" style="color:#2980b9;">skl5761@psu.edu</a> or
+                    <a href="mailto:yueguo_1006@outlook.com" style="color:#2980b9;">yueguo_1006@outlook.com</a>.
+                </div>
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- Section 1: Introduction -->
+            <h2 id="intro">1. Introduction</h2>
+
+            <h3 id="kv-bottleneck">1.1 The KV Cache Bottleneck</h3>
+            <p>
+                As LLMs are increasingly deployed for long-context tasks—retrieval-augmented generation (RAG), multi-hop chain-of-thought reasoning, and extended dialogues—the number of tokens that must be processed at each decoding step grows substantially. The fundamental problem is that <strong>autoregressive generation is memory-bound, not compute-bound</strong>. At every decoding step, the model must reload the entire Key-Value (KV) cache from off-chip memory<sup><a href="#note1">1</a></sup> to on-chip memory<sup><a href="#note2">2</a></sup>, and this data movement dominates latency, leading to poor GPU utilization.
+            </p>
+            <p>
+                Under standard Multi-Head Attention (MHA)<sup><a href="#note3">3</a></sup>, the KV cache size scales with the number of heads, the head dimension, and the sequence length—quickly becoming a severe bottleneck at context lengths exceeding 100K tokens.
+            </p>
+
+            <h3 id="existing-work">1.2 Existing Approaches</h3>
+            <p>
+                Several methods have tried to reduce the KV cache. <strong>Grouped Query Attention (GQA)</strong><sup><a href="#note4">4</a></sup> shares keys and values across groups of query heads, reducing the cache proportionally. <strong>Multi-Query Attention (MQA)</strong><sup><a href="#note5">5</a></sup> takes this to the extreme—a single KV pair shared by all heads—but can hurt model quality. More recently, <strong>Multi-Head Latent Attention (MLA)</strong><sup><a href="#note6">6</a></sup>, introduced in DeepSeek-V2, compresses the entire KV cache into a low-dimensional latent head, achieving remarkable cache savings while maintaining model quality.
+            </p>
+            <p>
+                However, as we explain in the next section, MLA's design introduces a critical limitation when deployed with <strong>tensor parallelism (TP)</strong>—the standard strategy for multi-device inference.
+            </p>
+
+            <hr class="section-divider">
+
+            <!-- Section 2: MLA -->
+            <h2 id="mla">2. Multi-Head Latent Attention (MLA) and Its TP Problem</h2>
+            <div class="figure-area">
+                <img src="mla.svg" style="width: 60%; display: block; margin: 0 auto;">
+                <div class="fig-caption">Figure 1: Multi-Head Latent Attention architecture.</div>
+            </div>
+            <h3 id="mla-mechanism">2.1 How MLA Works</h3>
+            <p>
+                Given a sequence of $n$ tokens with hidden states $\bm{H} \in \mathbb{R}^{n \times d}$, MLA first compresses them into a low-dimensional latent head and a partial RoPE key via learned down-projection matrices:
+            </p>
+            <ul>
+                <li>A <strong>KV latent</strong> $\bm{C}^{\text{KV}} = \operatorname{RMSNorm}\left(\bm{H}\bm{W}^{\text{DKV}}\right)$, with dimension $d_c = 4d_h$</li>
+                <li>A <strong>partial RoPE<sup><a href="#note7">7</a></sup> key</strong> $\bm{K}^{\text{RoPE}} = \operatorname{RoPE}\left(\bm{H}\bm{W}^{\text{KR}}\right)$, with dimension $d_h^R = 0.5d_h$</li>
+            </ul>
+            <p>
+                Only $\bm{C}^{\text{KV}}$ $\left(4d_h\right)$ and $\bm{K}^{\text{RoPE}}$ $\left(0.5d_h\right)$ are cached during inference, for a total of $4.5d_h$ per token—dramatically smaller than MHA's $2hd_h^R$ per token. The full keys and values for all $h$ heads are computed from the single latent $\bm{C}^{\text{KV}}$ via up-projection matrices $\bm{W}^{\text{UK}}$ and $\bm{W}^{\text{UV}}$.
+            </p>
+
+            <h3 id="mla-absorption">2.2 Efficient Decoding via Weight Absorption</h3>
+            <p>
+                MLA's efficient decoding proceeds in three steps, exploiting the associativity of matrix multiplication to avoid materializing the $h$ heads of NoPE keys and values entirely.
+            </p>
+            
+            <p><strong>Step 1 — Query-Side Weight Absorption.</strong>
+                For each head $i$, the up-projection matrix $\bm{W}_{:,(i)}^{\text{UK}}$ is absorbed directly into the NoPE query:
+                $$\tilde{\tens{Q}}_{n-1,i,:}^{\text{NoPE}} = \tens{Q}_{n-1,i,:}^{\text{NoPE}}\left(\bm{W}_{:,(i)}^{\text{UK}}\right)^\top \in \mathbb{R}^{d_c}$$
+                The query now lives in the $d_c$-dimensional latent space rather than the $d_h$-dimensional head space.
+            </p>
+            
+            <p><strong>Step 2 — MQA-Style Attention over the Latent Cache.</strong>
+                The absorbed query $\tilde{\tens{Q}}_{n-1,i,:} = \left[\tilde{\tens{Q}}_{n-1,i,:}^{\text{NoPE}}; \, \tens{Q}_{n-1,i,:}^{\text{RoPE}}\right]$ attends directly over the cached $\bm{C}^{\text{KV}}$ and $\bm{K}^{\text{RoPE}}$, without expanding to full keys and values:
+                $$\tens{Z}_{n-1,:,:} = \operatorname{Attention}\left(\tilde{\tens{Q}}_{n-1,:,:}, \, \operatorname{RepeatInterleave}\left(\left[\bm{C}^{\text{KV}}; \, \bm{K}^{\text{RoPE}}\right], h\right), \, \operatorname{RepeatInterleave}\left(\bm{C}^{\text{KV}}, \, h\right)\right)$$
+                This MQA-style operation is directly supported by optimized kernels: FlashAttention-3<sup><a href="#note8">8</a></sup> and FlashMLA<sup><a href="#note9">9</a></sup> are specifically designed to implement this latent-space attention computation efficiently.
+            </p>
+            
+            <p><strong>Step 3 — Output Up-Projection.</strong>
+                Finally, the intermediate output $\tens{Z}_{n-1,:,:} \in \mathbb{R}^{h \times d_c}$ is projected back to the head dimension via $\tilde{\bm{W}}^{\text{UV}}$:
+                $$\tens{O}_{n-1,:,:} = \operatorname{einsum}(\texttt{"hc,hcp->hp"}, \, \tens{Z}_{n-1, :, :}, \, \tilde{\bm{W}}^{\text{UV}}) \in \mathbb{R}^{h \times d_h}$$
+            </p>
+
+            <h3 id="mla-tp-problem">2.3 Why MLA Fails Under Tensor Parallelism</h3>
+            <p>
+                Tensor parallelism (TP) is the standard approach for multi-device inference: attention heads are split across devices, with each device handling a subset of heads. Under TP with $\varphi$ devices, GQA can reduce per-device KV cache loading to as low as $2gd_h/\varphi$ by evenly partitioning its $g$ KV heads across $\varphi$ devices.
+            </p>
+            <p>
+                <strong>MLA has only one latent head</strong>—it is indivisible. The official FlashMLA implementation handles TP by distributing the up-projection matrices across devices by head, but this requires <em>repeatedly</em> loading the full KV cache on every device. The result:
+            </p>
+
+            <div class="callout warning">
+                <p><strong>Problem:</strong> Under any degree of TP, MLA's per-device KV cache loading remains $4.5d_h$—never shrinking. For context: GQA with 8-way TP achieves $2d_h$ per device, which is less than half of MLA's cost. MLA decodes slower than GQA on sufficiently many devices despite having a smaller total cache.</p>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Method</th>
+                            <th>Total KV Cache Loading</th>
+                            <th>TP=1</th>
+                            <th>TP=2</th>
+                            <th>TP=4</th>
+                            <th>TP=8</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>GQA</td>
+                            <td>$16d_h$</td>
+                            <td>$16d_h$</td>
+                            <td>$8d_h$</td>
+                            <td>$4d_h$</td>
+                            <td>$2d_h$</td>
+                        </tr>
+                        <tr>
+                            <td>MLA</td>
+                            <td>$4.5d_h$</td>
+                            <td>$4.5d_h$</td>
+                            <td>$4.5d_h$</td>
+                            <td>$4.5d_h$</td>
+                            <td>$4.5d_h$</td>
+                        </tr>
+                        <tr class="highlight">
+                            <td><strong>MLRA (ours)</strong></td>
+                            <td>$4.5d_h$</td>
+                            <td>$4.5d_h$</td>
+                            <td>$2.5d_h$</td>
+                            <td>$1.5d_h$</td>
+                            <td>$1.5d_h$</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size:13px; color:#888; margin-top: -10px; margin-bottom: 20px;">Per-device KV cache loading under varying TP degrees. GQA is configured with 64 query heads and 8 KV heads; all other methods follow their standard configurations. MLRA achieves the lowest per-device footprint at TP $\geq$ 4.</p>
+
+            <hr class="section-divider">
+
+            <!-- Section 3: Method -->
+            <h2 id="method">3. Our Method: Multi-Head Low-Rank Attention (MLRA)</h2>
+            <div class="figure-area">
+                <img src="mla_mlra_4.svg" style="width: 100%; display: block; margin: 0 auto;">
+                <div class="fig-caption">Figure 2: MLA vs MLRA-4.</div>
+            </div>
+
+            <h3 id="block-decomp">3.1 The Block Decomposition Insight</h3>
+            <p>
+                The key observation that motivates MLRA is a simple algebraic identity. MLA's KV latent $\bm{C}^{\text{KV}}$ has dimension $4d_h$, so it can naturally be partitioned into four equal blocks $\bm{C}_{:,(0)}^{\text{KV}}$ through $\bm{C}_{:,(3)}^{\text{KV}}$ . Correspondingly, the up-projection matrix $\bm{W}_{:,(i)}^{\text{UK}}$ for head $i$ can be expressed as a vertical stack of four $d_h\times d_h$ row-blocks.
+            </p>
+            <p>
+                This means the NoPE key and value computations for head $i$ can be rewritten as a <strong>sum of four block products</strong>:
+            </p>
+            <div class="formula-block">
+                $$\tens{K}_{:,(i),:}^{\text{NoPE}} = \sum_{b=0}^{3} \bm{C}_{:,(b)}^{\text{KV}} \bm{W}_{(b),(i)}^{\text{UK}}$$
+                $$\tens{V}_{:,(i),:} = \sum_{b=0}^{3} \bm{C}_{:,(b)}^{\text{KV}} \bm{W}_{(b),(i)}^{\text{UV}}$$
+            </div>
+            <p>
+                This is mathematically equivalent to what MLA computes. The question is:
+            </p>
+            <p style="text-align: center;"><strong><em>Can we rearrange the summation to enable parallelism?</em></strong></p>
+
+            <h3 id="mlra4">3.2 MLRA-4: Moving the Sum Outside Attention</h3>
+            <p>
+                MLRA-4 takes the block decomposition and <strong>moves the summation from inside the key/value computation to outside attention</strong>. Rather than computing a single attention over a combined key, we compute four independent attention branches—one per latent block—and sum their outputs:
+            </p>
+            <div class="formula-block">
+                $$\tens{O}_{:,i,:} = \sum_{b=0}^{3} \operatorname{Softmax}\left(\tens{Q}_{:,i,:}^{\text{NoPE}} \left(\bm{C}_{:,(b)}^{\text{KV}} \bm{W}_{(b),(i)}^{\text{UK}}\right)^\top + \tens{Q}_{:,i,:}^{\text{RoPE}} \left(\bm{K}^{\text{RoPE}}\right)^\top \right) \left(\bm{C}_{:,(b)}^{\text{KV}} \bm{W}_{(b),(i)}^{\text{UV}}\right)$$
+            </div>
+            <p>
+                Each branch operates on a single latent block of dimension $d_h$, and the four branches are <em>independent</em>—perfectly suited for 4-way TP. Each device handles one block, caching only $d_h+0.5d_h=1.5d_h$ per token.
+            </p>
+
+            <div class="figure-area">
+                <img src="mlra_4.svg" style="width: 100%; display: block; margin: 0 auto;">
+                <div class="fig-caption">Figure 3: MLRA-4 architecture.</div>
+            </div>
+
+            <hr class="section-divider">
+
+            <!-- Section 4: Results -->
+            <h2 id="results">4. Experiments and Results</h2>
+
+            <p>
+                We compare MLRA against a comprehensive set of baselines—MHA, MQA, GQA, MLA, MFA<sup><a href="#note10">10</a></sup>, TPA<sup><a href="#note11">11</a></sup>, GLA-2, GLA-4, and GTA<sup><a href="#note12">12</a></sup>—all trained from scratch at the <strong>2.9B parameter scale</strong> on 98.3B tokens from FineWeb-Edu using the Llama-3 architecture. To ensure fair comparison, all models are parameter-matched by adjusting the FFN intermediate dimension.
+            </p>
+
+            <h3 id="ppl-results">4.1 Validation Perplexity</h3>
+            <div class="figure-area">
+                <div class="fig-caption">Table 1: Validation perplexity (lower is better) across seven datasets: Wikipedia, C4, Pile, RefinedWeb, Cosmopedia, FineWeb, and FineWeb-Edu. The best results are indicated in <strong>bold</strong>, while the second best are <u>underlined</u>.</div>
+                <img src="ppl.svg" style="width: 80%; display: block; margin: 0 auto;">
+            </div>
+
+            <p>
+                We evaluate perplexity on 7 datasets: Wikipedia, C4, Pile, RefinedWeb, Cosmopedia, FineWeb, and FineWeb-Edu. The key findings:
+            </p>
+            <ul>
+                <li><strong>MLRA-4 achieves the best average perplexity (13.672)</strong> across all seven datasets, outperforming all baselines including MLA (13.727).</li>
+                <li>MLRA-4 ranks first on six out of seven datasets (Wikipedia, C4, RefinedWeb, Cosmopedia, FineWeb, and FineWeb-Edu).</li>
+                <li><strong>MLRA-4 consistently outperforms MLRA-2</strong> across all datasets, demonstrating that more branches are beneficial.</li>
+            </ul>
+            <p>
+                This result is notable: MLRA-4 reduces per-device KV cache loading to $1.5d_h$ under 4-way TP—$3\times$ less than MLA—while achieving <em>better</em> model quality.
+            </p>
+
+            <h3 id="reasoning-results">4.2 Common-sense Reasoning</h3>
+            <div class="figure-area">
+                <div class="fig-caption">Table 2: Downstream evaluation on seven common-sense reasoning benchmarks: ARC-E, ARC-C, OpenBookQA, BoolQ, HellaSwag, Winogrande, and PIQA. ARC-E/C, OpenBookQA, HellaSwag, and PIQA use normalized accuracy (%); others use standard accuracy (%). Best is <strong>bold</strong>; second best is <u>underlined</u>.</div>
+                <img src="common-sense_reasoning.svg" style="width: 80%; display: block; margin: 0 auto;">
+            </div>
+            <p>
+                We evaluate zero-shot performance on 7 common-sense reasoning benchmarks: ARC-Easy, ARC-Challenge, OpenBookQA, BoolQ, HellaSwag, Winogrande, and PIQA. The results are fully consistent with the perplexity findings:
+            </p>
+            <ul>
+                <li><strong>MLRA-4 attains the highest average zero-shot accuracy</strong> across all 7 tasks among all compared attention variants.</li>
+            </ul>
+
+            <h3 id="decoding-speed">4.3 Decoding Speed</h3>
+            <p>
+                We benchmark single-sequence decoding latency on a single NVIDIA H100 80GB GPU across context lengths from 128K to 2M tokens. All models use 64 heads with head dimension 128 and partial RoPE dimension 64. MLRA-4 is implemented on top of FlashAttention-3; MLA uses the official FlashMLA kernel.
+            </p>
+
+            <div class="figure-area">
+                <img src="decoding_speed.svg" style="width: 60%; display: block; margin: 0 auto;">
+                <div class="fig-caption">Figure 4: Decoding latency (lower is better) versus sequence length (batch=1) for GQA, MLA, GLA-2, and MLRA-4.</div>
+            </div>
+
+            <p>
+                MLRA-4 consistently outperforms all baselines at every context length. Speedups over GQA range from <strong>$1.05\times–1.26\times$</strong>, growing with sequence length. The speedup over MLA is a steady <strong>$2.8\times$</strong> throughout, confirming that the reduced per-device KV cache loading under 4-way TP directly translates into faster decoding. The growing gap against GQA at longer contexts is expected: as sequences grow, the reduced per-device cache size of MLRA increasingly amortizes the multi-branch computation overhead, pushing the kernel further from the bandwidth ceiling.
+            </p>
+
+            <h3 id="throughput">4.4 Decoding Throughput</h3>
+            <p>
+                We evaluate batch decoding throughput on 8 H100 GPUs with 128 heads and hidden size 7168 (following DeepSeek-V3). The deployment strategy matters: MLA must repeatedly load the KV cache under TP, so we use DP=8 for MLA; GLA-2 uses TP=2/DP=4; MLRA-4 uses <strong>TP=4/DP=2</strong>; GQA uses TP=8.
+            </p>
+            <div class="figure-area">
+                <img src="decoding_throughput.svg" style="width: 60%; display: block; margin: 0 auto;">
+                <div class="fig-caption">Figure 5: Decoding throughput versus sequence length (batch=128) for GQA, MLA, GLA-2, and MLRA-4.</div>
+            </div>
+            <p>
+                <strong>MLRA-4 achieves the highest decoding throughput across all sequence lengths.</strong> For short sequences, where pre-attention computation dominates, MLRA-4 benefits from having fewer Q/K/V parameters than competitors. For long sequences, the 4-way TP with non-replicated KV cache loading provides the throughput advantage. GQA trails MLRA-4 at long contexts despite TP=8, because MLRA-4's smaller per-device cache enables more efficient memory utilization.
+            </p>
+
+            <hr class="section-divider">
+
+            <h2 id="conclusion">5. Conclusion</h2>
+            <p>
+                We propose Multi-Head Low-Rank Attention (MLRA), a novel attention mechanism with native 4-way tensor parallelism support. At the 2.9B scale, MLRA-4 achieves state-of-the-art performance on perplexity and zero-shot common-sense reasoning benchmarks. Furthermore, MLRA achieves the lowest decoding latency for long-context sequences (up to 2M tokens) and the highest throughput across sequence lengths from 1K to 16K tokens with 4-way tensor parallelism.
+            </p>
+        </main>
+
+        <!-- Right margin-notes sidebar -->
+        <aside class="sidebar-right">
+            <div class="notes-header">
+                <h2 class="notes-title">Notes</h2>
+            </div>
+
+            <div class="note-item note-highlight" id="note1">
+                <div class="note-ref">¹ Off-chip Memory</div>
+                <div class="note-content"><strong>High-Bandwidth Memory (HBM)</strong> — the main GPU DRAM. ~3 TB/s bandwidth on H100, but physically off the compute die.</div>
+            </div>
+
+            <div class="note-item note-highlight" id="note2">
+                <div class="note-ref">² On-chip Memory</div>
+                <div class="note-content"><strong>SRAM</strong> — fast scratchpad memory on the GPU chip. Orders of magnitude faster than HBM, but very limited in capacity (~40 MB on H100).</div>
+            </div>
+
+            <div class="note-item" id="note3">
+                <div class="note-ref">³ MHA</div>
+                <div class="note-content">Vaswani et al. <a href="https://arxiv.org/abs/1706.03762" target="_blank" style="color:#2980b9; text-decoration:none;"><em>Attention Is All You Need</em></a>, NIPS 2017.</div>
+            </div>
+
+            <div class="note-item" id="note4">
+                <div class="note-ref">⁴ GQA</div>
+                <div class="note-content">Ainslie et al. <a href="https://arxiv.org/abs/2305.13245" target="_blank" style="color:#2980b9; text-decoration:none;"><em>GQA: Training Generalized Multi-Query Transformer Models from Multi-Head Checkpoints</em></a>, EMNLP 2023.</div>
+            </div>
+
+            <div class="note-item" id="note5">
+                <div class="note-ref">⁵ MQA</div>
+                <div class="note-content">Noam Shazeer <a href="https://arxiv.org/abs/1911.02150" target="_blank" style="color:#2980b9; text-decoration:none;"><em>Fast Transformer Decoding: One Write-Head is All You Need</em></a>, ArXiv 2019.</div>
+            </div>
+
+            <div class="note-item" id="note6">
+                <div class="note-ref">⁶ MLA</div>
+                <div class="note-content">DeepSeek-AI et al. <a href="https://arxiv.org/abs/2405.04434" target="_blank" style="color:#2980b9; text-decoration:none;"><em>DeepSeek-V2: A Strong, Economical, and Efficient Mixture-of-Experts Language Model</em></a>, ArXiv 2024.</div>
+            </div>
+
+            <div class="note-item" id="note7">
+                <div class="note-ref">⁷ RoPE</div>
+                <div class="note-content">Su et al. <a href="https://arxiv.org/abs/2104.09864" target="_blank" style="color:#2980b9; text-decoration:none;"><em>RoFormer: Enhanced Transformer with Rotary Position Embedding</em></a>, Neurocomputing 2024.</div>
+            </div>
+
+            <div class="note-item" id="note8">
+                <div class="note-ref">⁸ FlashAttention-3</div>
+                <div class="note-content">Shah et al. <a href="https://arxiv.org/abs/2407.08608" target="_blank" style="color:#2980b9; text-decoration:none;"><em>FlashAttention-3: Fast and Accurate Attention with Asynchrony and Low-precision</em></a>, NeurIPS 2024.</div>
+            </div>
+
+            <div class="note-item" id="note9">
+                <div class="note-ref">⁹ FlashMLA</div>
+                <div class="note-content">Li and Liu. <a href="https://github.com/deepseek-ai/FlashMLA" target="_blank" style="color:#2980b9; text-decoration:none;"><em>FlashMLA: Efficient MLA Decoding Kernels</em></a>, GitHub 2025.</div>
+            </div>
+
+            <div class="note-item" id="note10">
+                <div class="note-ref">¹⁰ MFA</div>
+                <div class="note-content">Hu et al. <a href="https://arxiv.org/abs/2412.19255" target="_blank" style="color:#2980b9; text-decoration:none;"><em>Multi-matrix factorization attention</em></a>, ArXiv 2024.</div>
+            </div>
+
+            <div class="note-item" id="note11">
+                <div class="note-ref">¹¹ TPA</div>
+                <div class="note-content">Zhang et al. <a href="https://arxiv.org/abs/2501.06425" target="_blank" style="color:#2980b9; text-decoration:none;"><em>Tensor Product Attention Is All You Need</em></a>, NeurIPS 2025.</div>
+            </div>
+
+            <div class="note-item" id="note12">
+                <div class="note-ref">¹² GLA / GTA</div>
+                <div class="note-content">Zadouri, Strauss, and Dao. <a href="https://arxiv.org/abs/2505.21487" target="_blank" style="color:#2980b9; text-decoration:none;"><em>Hardware-Efficient Attention for Fast Decoding</em></a>, COLM 2025.</div>
+            </div>
+        </aside>
+    </div>
+
+    <script>
+        /* ── Smooth scroll for anchor links ── */
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+
+                // Note anchors: scroll the sidebar so the note appears at its top
+                if (href.startsWith('#note')) {
+                    e.preventDefault();
+                    const note = document.querySelector(href);
+                    const sidebar = document.querySelector('.sidebar-right');
+                    if (!note || !sidebar) return;
+
+                    // note.style.top is set by positionNotes() as a px string
+                    const noteTop = parseFloat(note.style.top) || 0;
+                    // Scroll the page so that noteTop aligns with the sidebar's visible top
+                    const sidebarDocTop = sidebar.getBoundingClientRect().top + window.scrollY;
+                    const headerHeight = 70; // height of the sticky "Notes" header
+                    const scrollTarget = sidebarDocTop + noteTop - headerHeight;
+                    window.scrollTo({ top: scrollTarget, behavior: 'smooth' });
+                    return;
+                }
+
+                e.preventDefault();
+                const target = document.querySelector(href);
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        /* ── Highlight active TOC section on scroll ── */
+        window.addEventListener('scroll', () => {
+            const headings = document.querySelectorAll('h2[id], h3[id]');
+            const scrollPos = window.scrollY + 120;
+            let activeId = null;
+            headings.forEach(h => {
+                if (h.offsetTop <= scrollPos) activeId = h.getAttribute('id');
+            });
+            document.querySelectorAll('.toc-list a').forEach(link => {
+                link.style.background = '';
+                link.style.color = '';
+                link.style.fontWeight = '';
+            });
+            if (activeId) {
+                const activeLink = document.querySelector(`.toc-list a[href="#${activeId}"]`);
+                if (activeLink) {
+                    activeLink.style.background = '#eaf4fb';
+                    activeLink.style.color = '#2980b9';
+                    activeLink.style.fontWeight = '600';
+                }
+            }
+        });
+
+        /* ══════════════════════════════════════════
+           MARGIN NOTES POSITIONING
+           Each note is placed at the same vertical
+           position as its first superscript reference
+           in the main content. Notes that would
+           overlap are pushed downward.
+        ══════════════════════════════════════════ */
+        function positionNotes() {
+            const sidebar = document.querySelector('.sidebar-right');
+            if (!sidebar || window.innerWidth <= 1200) return;
+
+            // Get the sidebar's top offset from the document top
+            const sidebarTop = sidebar.getBoundingClientRect().top + window.scrollY;
+            const NOTE_GAP = 10;   // minimum gap between notes (px)
+            const NOTE_TOP_MIN = 70; // don't overlap the "Notes" header
+
+            // Collect each note and find the vertical position of its reference
+            const entries = [];
+            for (let i = 1; i <= 12; i++) {
+                const note = document.getElementById('note' + i);
+                // First occurrence of the reference link for this note
+                const ref  = document.querySelector('a[href="#note' + i + '"]');
+                if (!note || !ref) continue;
+
+                const refDocTop = ref.getBoundingClientRect().top + window.scrollY;
+                const targetTop = refDocTop - sidebarTop;
+
+                entries.push({ note, targetTop });
+            }
+
+            // Sort by intended vertical position (they should already be in order)
+            entries.sort((a, b) => a.targetTop - b.targetTop);
+
+            // Place notes, pushing down if they would overlap the previous note
+            let cursor = NOTE_TOP_MIN;
+            entries.forEach(({ note, targetTop }) => {
+                const top = Math.max(targetTop, cursor);
+                note.style.top = top + 'px';
+                // Use offsetHeight *after* the layout reflow
+                const h = note.getBoundingClientRect().height || note.offsetHeight;
+                cursor = top + h + NOTE_GAP;
+            });
+
+            // Make sidebar tall enough to contain all absolutely positioned notes
+            const lastEntry = entries[entries.length - 1];
+            if (lastEntry) {
+                const lastNote = lastEntry.note;
+                const lastTop = parseFloat(lastNote.style.top) || 0;
+                const lastH = lastNote.getBoundingClientRect().height || lastNote.offsetHeight;
+                sidebar.style.minHeight = (lastTop + lastH + 40) + 'px';
+            }
+        }
+
+        // Run after full layout (including KaTeX rendering)
+        window.addEventListener('load', () => {
+            setTimeout(positionNotes, 300);
+        });
+        window.addEventListener('resize', positionNotes);
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(positionNotes, 800);
+        });
+    </script>
+</body>
+</html>
